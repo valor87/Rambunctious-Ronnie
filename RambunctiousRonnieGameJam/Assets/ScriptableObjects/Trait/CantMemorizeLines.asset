@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7d4a27d985c064aa71c6866b94fe0d, type: 3}
+  m_Name: CantMemorizeLines
+  m_EditorClassIdentifier: 
+  traitName: Can't Memorize Lines
+  positiveGenres: 06000000070000000c00000002000000
+  negativeGenres: 03000000040000000a000000
