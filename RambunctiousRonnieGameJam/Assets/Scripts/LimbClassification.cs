@@ -41,4 +41,15 @@ public class LimbClassification : MonoBehaviour
         Hover = false;
         animator.SetBool("Hover", false);
     }
+
+    public void playRemoveAnimation()
+    {
+        StopAnimation();
+        animator.SetTrigger("Remove");
+    }
+
+    public void DestroyLimb()
+    {
+        Destroy(this.gameObject);
+    }
 }

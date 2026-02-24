@@ -38,7 +38,7 @@ public class SelectingLimb : MonoBehaviour
                 hoverLimbType = LimbClass.LimbType;
                 if (Input.GetMouseButton(0))
                 {
-                    PlayerInteraction();
+                    PlayerInteraction(LimbClass);
                 }
             }
 
@@ -55,8 +55,8 @@ public class SelectingLimb : MonoBehaviour
         }
     }
 
-    void PlayerInteraction()
+    void PlayerInteraction(LimbClassification LC)
     {
-
+        LC.playRemoveAnimation();
     }
 }
