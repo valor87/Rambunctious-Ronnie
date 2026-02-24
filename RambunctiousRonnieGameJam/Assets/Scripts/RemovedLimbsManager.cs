@@ -22,13 +22,11 @@ public class RemovedLimbsManager : MonoBehaviour
     {
         if(LimbsOwned >= 3)
             return;
-        Transform Scale = Instantiate.transform;
         limbsOwned.Add(Limb);
         LimbsOwned++;
-        Limb.transform.position = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
-        GameObject StoredLimb = Instantiate(Instantiate, Limb.transform.position, Quaternion.identity);
+        Vector3 pos = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
+        GameObject StoredLimb = Instantiate(Instantiate, pos, Quaternion.identity);
         StoredLimb.GetComponent<LimbClassification>().Limb = Limb.GetComponent<LimbClassification>().Limb;
         StoredLimb.GetComponent<LimbClassification>().LimbType = Limb.GetComponent<LimbClassification>().LimbType;
-        Limb.transform.localScale = Scale.localScale;
     }
 }
