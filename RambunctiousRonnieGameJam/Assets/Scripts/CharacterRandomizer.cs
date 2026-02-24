@@ -13,14 +13,10 @@ public class CharacterRandomizer : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
         eventCore.createNewCharacterEV.AddListener(RandomizeCharacter);
+        RandomizeCharacter();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //you can test out spawning through the context menu
     [ContextMenu("Spawn and Randomize Character")]
     void RandomizeCharacter()
     {
