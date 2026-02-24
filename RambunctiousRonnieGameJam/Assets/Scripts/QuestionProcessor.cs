@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class QuestionProcessor : MonoBehaviour
 {
     EventCore eventCore;
     public GameObject characterObj;
+    public TextMeshProUGUI textbox;
+    public TextMeshProUGUI[] traitTexts = new TextMeshProUGUI[3];
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,15 +15,9 @@ public class QuestionProcessor : MonoBehaviour
         eventCore.askQuestionEV.AddListener(ProcessQuestion);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ProcessQuestion(Question question)
     {
-        bool didUniqueReply = false; //temporary, will remove later
+        bool didUniqueReply = false; //temporary, will probably remove later
         Character characterData = characterObj.GetComponent<CharacterValues>().CharactersValues;
         for (int i = 0; i < question.traitsRevealed.Count; i++)
         {
@@ -28,6 +25,7 @@ public class QuestionProcessor : MonoBehaviour
             if (characterData.traitList.Contains(selectedTrait))
             {
                 print($"Revealed Trait: {selectedTrait}");
+                RevealTrait(selectedTrait);
             }
         }
         
@@ -37,13 +35,42 @@ public class QuestionProcessor : MonoBehaviour
             if (characterData.traitList.Contains(selectedTrait))
             {
                 print($"Trait: {selectedTrait} \nReply: {question.replyText[i]}");
+                textbox.text = question.replyText[i];
                 didUniqueReply = true;
+                break;
             }
         }
 
         if (!didUniqueReply)
         {
             print($"Default reply: {question.defaultReply}");
+            textbox.text = question.defaultReply;
         }
+    }
+
+    void RevealTrait(Trait selectedTrait)
+    {
+        for (int i = 0; i < traitTexts.Length; i++)
+        {
+            if (traitTexts[i].text != "?")
+                continue;
+
+            bool isTraitRevealed = CheckIfTraitIsRevealed(selectedTrait);
+            if (isTraitRevealed)
+                break;
+
+            traitTexts[i].text = selectedTrait.traitName;
+        }
+    }
+
+    bool CheckIfTraitIsRevealed(Trait selectedTrait)
+    {
+        for (int i = 0; i < traitTexts.Length; i++)
+        {
+            if (traitTexts[i].text == selectedTrait.traitName)
+                return true;
+        }
+
+        return false;
     }
 }

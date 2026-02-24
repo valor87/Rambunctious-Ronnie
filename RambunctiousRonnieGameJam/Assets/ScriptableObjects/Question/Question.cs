@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Question", menuName = "Scriptable Objects/Question")]
 public class Question : ScriptableObject
 {
-    public string questionIdentifier = null;
     public string questionText = null;
     public List<Trait> traitsRevealed = new List<Trait>();
     //a reply for the question that should be very neutral

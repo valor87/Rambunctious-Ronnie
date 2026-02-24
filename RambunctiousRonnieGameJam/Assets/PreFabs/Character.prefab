@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8504039519774672484}
   - component: {fileID: 3448537828360214577}
   - component: {fileID: 7525090692686740434}
+  - component: {fileID: 2394838675086508346}
   m_Layer: 6
   m_Name: LeftLeg
   m_TagString: Untagged
@@ -124,8 +125,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424fb5c9ea070f4fb2daa59845e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!95 &2394838675086508346
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588530674433298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76fc5ee49bfef0547a3fd09b26b6042b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &113355340269286734
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +273,7 @@ GameObject:
   - component: {fileID: 7348094959648828015}
   - component: {fileID: 688790796051028696}
   - component: {fileID: 5446066944094580104}
+  - component: {fileID: 7409267021565886481}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -359,8 +384,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424fb5c9ea070f4fb2daa59845e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!95 &7409267021565886481
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342660984079708048}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0424d5788dc7494d83769cc40346273, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &481112435477435735
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +437,7 @@ Transform:
   m_GameObject: {fileID: 481112435477435735}
   serializedVersion: 2
   m_LocalRotation: {x: -0.065140955, y: -0.13288964, z: -0.39675722, w: 0.90591425}
-  m_LocalPosition: {x: -0.5149294, y: -1.2074176, z: 0.24846524}
+  m_LocalPosition: {x: -0.47, y: -1.25, z: 0.01}
   m_LocalScale: {x: 0.89129895, y: 1.1206441, z: 0.987776}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -484,6 +532,7 @@ GameObject:
   - component: {fileID: 6108152541784018522}
   - component: {fileID: 6378326321508091288}
   - component: {fileID: 3428651480295592621}
+  - component: {fileID: 3423525859126573410}
   m_Layer: 6
   m_Name: LeftArm
   m_TagString: Untagged
@@ -595,8 +644,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424fb5c9ea070f4fb2daa59845e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!95 &3423525859126573410
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622502353350205825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1e91697f3e795946a7442dff1d393b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2880296940611716119
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +734,7 @@ GameObject:
   - component: {fileID: 1082453079433853898}
   - component: {fileID: 3821062809740319956}
   - component: {fileID: 5587317314157191662}
+  - component: {fileID: 8575230477240116951}
   m_Layer: 6
   m_Name: RightLeg
   m_TagString: Untagged
@@ -773,8 +846,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424fb5c9ea070f4fb2daa59845e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!95 &8575230477240116951
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029579515948802792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94d809508b5cdee4684541696a9d95c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5707484534895614948
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +994,7 @@ GameObject:
   - component: {fileID: 6145247108428143913}
   - component: {fileID: 8059542960502772895}
   - component: {fileID: 1978915999544963471}
+  - component: {fileID: 9137353225647996286}
   m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
@@ -1007,8 +1104,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424fb5c9ea070f4fb2daa59845e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!95 &9137353225647996286
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919554672085096385}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19ac81de389de2f40aeaecb3316e8ac4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7129695059190214262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1142,7 @@ GameObject:
   - component: {fileID: 7105469357958534139}
   - component: {fileID: 2263211802267796921}
   - component: {fileID: 1879564427159130129}
+  - component: {fileID: 2756027741990166399}
   m_Layer: 6
   m_Name: RightArm
   m_TagString: Untagged
@@ -1133,8 +1254,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424fb5c9ea070f4fb2daa59845e2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!95 &2756027741990166399
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129695059190214262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66d03af37f59988418d317304e724e5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8849252813924481588
 GameObject:
   m_ObjectHideFlags: 0
