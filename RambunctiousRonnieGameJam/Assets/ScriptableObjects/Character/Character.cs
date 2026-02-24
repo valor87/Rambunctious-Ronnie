@@ -23,5 +23,32 @@ public class Character : ScriptableObject
     public BodyType leftLeg;
     public BodyType rightLeg;
     [Header("Traits")]
-    public List<Trait> traitList;
+    public List<Trait> traitList = new List<Trait>();
+
+    public void Randomize(List<Trait> everyTraitList)
+    {
+        //would have been better to make a list of the body parts instead of separate variables
+        //but oh well
+        head = (BodyType)Random.Range(1, 6);
+        torso = (BodyType)Random.Range(1, 6);
+        leftArm = (BodyType)Random.Range(1, 6);
+        rightArm = (BodyType)Random.Range(1, 6);
+        leftLeg = (BodyType)Random.Range(1, 6);
+        rightLeg = (BodyType)Random.Range(1, 6);
+
+        for (int i = 0; i < 3; i++)
+        {
+            int randIndex = Random.Range(0, everyTraitList.Count);
+            Debug.Log($"{randIndex}, {everyTraitList[randIndex]}");
+
+            //check if character already has selected trait
+            if (traitList.Contains(everyTraitList[randIndex]))
+            {
+                i--;
+                continue;
+            }
+
+            traitList.Add(everyTraitList[randIndex]);
+        }
+    }
 }

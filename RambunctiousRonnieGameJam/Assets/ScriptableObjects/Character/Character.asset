@@ -18,4 +18,5 @@ MonoBehaviour:
   rightArm: 0
   leftLeg: 0
   rightLeg: 0
-  traitList: []
+  traitList:
+  - {fileID: 0}
