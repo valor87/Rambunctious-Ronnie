@@ -20,6 +20,8 @@ public class RemovedLimbsManager : MonoBehaviour
 
     public void SeveredLimb(GameObject Limb)
     {
+        if(LimbsOwned >= 3)
+            return;
         limbsOwned.Add(Limb);
         LimbsOwned++;
         Limb.transform.position = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
