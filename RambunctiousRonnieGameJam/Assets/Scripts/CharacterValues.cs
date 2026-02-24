@@ -54,7 +54,7 @@ public class CharacterValues : MonoBehaviour
     }
 
     // puts all the children of an object into a list
-    void SetChildrenToAList(GameObject Parent, List<GameObject> Childreb)
+    void SetChildrenToAList(GameObject Parent, List<GameObject> Children)
     {
         int ChildrenCount = Parent.transform.childCount;
 

@@ -24,10 +24,10 @@ public class CharacterRandomizer : MonoBehaviour
     [ContextMenu("Spawn and Randomize Character")]
     void RandomizeCharacter()
     {
-        CharacterObj characterObj = Instantiate(characterPrefab).GetComponent<CharacterObj>();
-        characterObj.characterData = Character.CreateInstance<Character>();
+        CharacterValues characterObj = Instantiate(characterPrefab).GetComponent<CharacterValues>();
+        characterObj.CharactersValues = Character.CreateInstance<Character>();
 
-        characterObj.characterData.Randomize(listOfAllTraits);
+        characterObj.CharactersValues.Randomize(listOfAllTraits);
         
     }
 }
