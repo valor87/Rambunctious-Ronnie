@@ -20,6 +20,25 @@ public enum Limb
 }
 public class LimbClassification : MonoBehaviour
 {
+    public bool Hover;
     public Limb Limb;
     public LimbCharacter LimbType;
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        animator.SetBool("Hover", Hover);
+        
+    }
+
+    public void StopAnimation()
+    {
+        Hover = false;
+        animator.SetBool("Hover", false);
+    }
 }
