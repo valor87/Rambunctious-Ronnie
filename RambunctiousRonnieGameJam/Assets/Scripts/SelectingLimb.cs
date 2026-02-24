@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SelectingLimb : MonoBehaviour
@@ -58,7 +59,13 @@ public class SelectingLimb : MonoBehaviour
 
     void PlayerInteraction(GameObject LC)
     {
-        RemovedLimbs.SeveredLimb(LC);
+        StartCoroutine(RemoveLimb(LC));
         LC.GetComponent<LimbClassification>().playRemoveAnimation();
+    }
+
+    IEnumerator RemoveLimb(GameObject LC)
+    {
+        yield return new WaitForSeconds(1);
+        RemovedLimbs.SeveredLimb(LC);
     }
 }
