@@ -6,6 +6,7 @@ public class SelectingLimb : MonoBehaviour
     public LimbCharacter LookingAtLimbType;
     public LayerMask CharacerLayer;
 
+    public RemovedLimbsManager RemovedLimbs;
     public LimbClassification LimbClass;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,7 +15,7 @@ public class SelectingLimb : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         MoveRayCast();
     }
@@ -36,9 +37,9 @@ public class SelectingLimb : MonoBehaviour
                 LimbClass.Hover = true;
                 hoverLimb = LimbClass.Limb;
                 hoverLimbType = LimbClass.LimbType;
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    PlayerInteraction(LimbClass);
+                    PlayerInteraction(hit.collider.gameObject);
                 }
             }
 
@@ -55,8 +56,9 @@ public class SelectingLimb : MonoBehaviour
         }
     }
 
-    void PlayerInteraction(LimbClassification LC)
+    void PlayerInteraction(GameObject LC)
     {
-        LC.playRemoveAnimation();
+        RemovedLimbs.SeveredLimb(LC);
+        LC.GetComponent<LimbClassification>().playRemoveAnimation();
     }
 }

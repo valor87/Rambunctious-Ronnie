@@ -50,6 +50,6 @@ public class LimbClassification : MonoBehaviour
 
     public void DestroyLimb()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }
