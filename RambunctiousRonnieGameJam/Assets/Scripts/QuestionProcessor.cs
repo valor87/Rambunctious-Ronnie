@@ -36,7 +36,7 @@ public class QuestionProcessor : MonoBehaviour
             if (characterData.traitList.Contains(selectedTrait))
             {
                 print($"Revealed Trait: {selectedTrait}");
-                RevealTrait(selectedTrait);
+                eventCore.revealTraitEV.Invoke(selectedTrait);
             }
         }
         
@@ -57,31 +57,5 @@ public class QuestionProcessor : MonoBehaviour
             print($"Default reply: {question.defaultReply}");
             textbox.text = question.defaultReply;
         }
-    }
-
-    void RevealTrait(Trait selectedTrait)
-    {
-        for (int i = 0; i < traitTexts.Length; i++)
-        {
-            if (traitTexts[i].text != "?")
-                continue;
-
-            bool isTraitRevealed = CheckIfTraitIsRevealed(selectedTrait);
-            if (isTraitRevealed)
-                break;
-
-            traitTexts[i].text = selectedTrait.traitName;
-        }
-    }
-
-    bool CheckIfTraitIsRevealed(Trait selectedTrait)
-    {
-        for (int i = 0; i < traitTexts.Length; i++)
-        {
-            if (traitTexts[i].text == selectedTrait.traitName)
-                return true;
-        }
-
-        return false;
     }
 }

@@ -17,12 +17,23 @@ public class EventCore : MonoBehaviour
     public UnityEvent<Question> askQuestionEV;
 
     [HideInInspector]
+    //event for revealing traits in the character stat menu
+    public UnityEvent<Trait> revealTraitEV;
+
+    [HideInInspector]
     //event for changing genres. should happen once the player gets a successful show, which could also be an event in itself
     public UnityEvent changeGenreEV;
+
+    //event for updating the genre in the character stat menu. follows changeGenreEV
+    public UnityEvent<string> updateGenreEV;
 
     [HideInInspector]
     //event for calculating the success chance. should happen when a new character is created or when a body part is swapped out
     public UnityEvent calculateSuccessChanceEV;
+
+    [HideInInspector]
+    //event for updating the success chance in the character stat menu. follows calculateSuccessChanceEV
+    public UnityEvent<float> updateSuccessChanceEV;
 
     //events for approving or denying a character. either checks if show succeeds through chance or begins the salvaging phase
     [HideInInspector]

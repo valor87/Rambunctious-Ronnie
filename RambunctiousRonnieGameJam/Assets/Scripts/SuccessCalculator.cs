@@ -1,9 +1,6 @@
-using NUnit.Framework;
 using UnityEngine;
 using static Trait;
-using static LimbClassification;
 using System.Collections.Generic;
-using TMPro;
 
 public class SuccessCalculator : MonoBehaviour
 {
@@ -12,10 +9,7 @@ public class SuccessCalculator : MonoBehaviour
 
     [Header("References")]
     public GameObject characterObj;
-    //affects the success chance text based on what traits are revealed
-    //should probably be done in its own thing but whatever
-    public TextMeshProUGUI successChanceText;
-    public TextMeshProUGUI[] traitTexts = new TextMeshProUGUI[3];
+    public CharacterStatMenu characterStatMenu;
     [Space(20)]
     [Tooltip("The base chance of success. Should be 20%.")]
     public float baseChance = 0.2f;
@@ -66,6 +60,16 @@ public class SuccessCalculator : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
+        GameObject canvas = GameObject.Find("Canvas");
+        if (characterStatMenu == null)
+        {
+            characterStatMenu = canvas.transform.Find("CharacterStatsMenu").GetComponent<CharacterStatMenu>();
+            if (characterStatMenu == null)
+            {
+                Debug.LogError("Could not find the character stat menu in the canvas.");
+            }
+        }
+
         eventCore.calculateSuccessChanceEV.AddListener(CalculateActualChance);
         eventCore.setNewCharacterEV.AddListener(SetNewCharacter);
         eventCore.approveCharacterEV.AddListener(DetermineSuccess);
@@ -98,7 +102,7 @@ public class SuccessCalculator : MonoBehaviour
             if (trait.positiveGenres.Contains(currentGenre))
             {
                 traitChance += traitChanceUpStep;
-                if (CheckIfTraitIsRevealed(trait))
+                if (characterStatMenu.CheckIfTraitIsRevealed(trait))
                 {
                     displayedTraitChance += traitChanceUpStep;
                     print($"Trait {trait} is revealed! displayed trait chance is now {displayedTraitChance}");
@@ -111,7 +115,7 @@ public class SuccessCalculator : MonoBehaviour
             if (trait.negativeGenres.Contains(currentGenre))
             {
                 traitChance -= traitChanceDownStep;
-                if (CheckIfTraitIsRevealed(trait))
+                if (characterStatMenu.CheckIfTraitIsRevealed(trait))
                 {
                     displayedTraitChance -= traitChanceDownStep;
                     print($"Trait {trait} is revealed! displayed trait chance is now {displayedTraitChance}");
@@ -148,38 +152,7 @@ public class SuccessCalculator : MonoBehaviour
         float displayedChance = Mathf.Round((baseChance + displayedTraitChance + bodyPartChance) * 100);
         print($"Displayed Chance: {displayedChance}");
 
-        if (!CheckIfAllTraitsRevealed())
-        {
-            successChanceText.text = $"Chance of success: {displayedChance}% + ?";
-        }
-        else
-        {
-            successChanceText.text = $"Chance of success: {displayedChance}%";
-        }
-        
-        
-    }
-
-    bool CheckIfTraitIsRevealed(Trait selectedTrait)
-    {
-        for (int i = 0; i < traitTexts.Length; i++)
-        {
-            if (traitTexts[i].text == selectedTrait.traitName)
-                return true;
-        }
-
-        return false;
-    }
-
-    bool CheckIfAllTraitsRevealed()
-    {
-        for (int i = 0; i < traitTexts.Length; i++)
-        {
-            if (traitTexts[i].text == "?")
-                return false;
-        }
-
-        return true;
+        eventCore.updateSuccessChanceEV.Invoke(displayedChance);
     }
 
     void DetermineSuccess()
