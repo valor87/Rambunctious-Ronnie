@@ -13,6 +13,17 @@ public class QuestionProcessor : MonoBehaviour
     {
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
         eventCore.askQuestionEV.AddListener(ProcessQuestion);
+        eventCore.setNewCharacterEV.AddListener(SetNewCharacter);
+    }
+
+    void SetNewCharacter(GameObject newCharacterObj)
+    {
+        print("received new character");
+        characterObj = newCharacterObj;
+        foreach (TextMeshProUGUI textObj in traitTexts)
+        {
+            textObj.text = "?";
+        }
     }
 
     void ProcessQuestion(Question question)

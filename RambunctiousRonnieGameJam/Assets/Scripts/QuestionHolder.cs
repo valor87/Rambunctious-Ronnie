@@ -11,6 +11,8 @@ public class QuestionHolder : MonoBehaviour
     void Start()
     {
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        eventCore.winGameEV.AddListener(disableSelf);
+        eventCore.loseGameEV.AddListener(disableSelf);
 
         if (question.questionText == null)
         {
@@ -24,5 +26,10 @@ public class QuestionHolder : MonoBehaviour
     {
         print("invoking askQuestionEV");
         eventCore.askQuestionEV.Invoke(question);
+    }
+
+    void disableSelf()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -3,13 +3,19 @@ using UnityEngine;
 using static Trait;
 using static LimbClassification;
 using System.Collections.Generic;
+using TMPro;
 
 public class SuccessCalculator : MonoBehaviour
 {
     GameManager gameManager;
     EventCore eventCore;
 
+    [Header("References")]
     public GameObject characterObj;
+    //affects the success chance text based on what traits are revealed
+    //should probably be done in its own thing but whatever
+    public TextMeshProUGUI successChanceText;
+    public TextMeshProUGUI[] traitTexts = new TextMeshProUGUI[3];
     [Space(20)]
     [Tooltip("The base chance of success. Should be 20%.")]
     public float baseChance = 0.2f;
@@ -61,6 +67,13 @@ public class SuccessCalculator : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
         eventCore.calculateSuccessChanceEV.AddListener(CalculateActualChance);
+        eventCore.setNewCharacterEV.AddListener(SetNewCharacter);
+        eventCore.approveCharacterEV.AddListener(DetermineSuccess);
+    }
+
+    void SetNewCharacter(GameObject newCharacterObj)
+    {
+        characterObj = newCharacterObj;
     }
 
     // Update is called once per frame
@@ -76,6 +89,7 @@ public class SuccessCalculator : MonoBehaviour
         Character characterData = characterObjValues.CharactersValues;
         Genres currentGenre = gameManager.currentShowGenre;
         traitChance = 0;
+        float displayedTraitChance = 0;
         bodyPartChance = 0;
         actualChance = 0;
 
@@ -84,12 +98,24 @@ public class SuccessCalculator : MonoBehaviour
             if (trait.positiveGenres.Contains(currentGenre))
             {
                 traitChance += traitChanceUpStep;
+                if (CheckIfTraitIsRevealed(trait))
+                {
+                    displayedTraitChance += traitChanceUpStep;
+                    print($"Trait {trait} is revealed! displayed trait chance is now {displayedTraitChance}");
+                }
+                    
+
                 continue;
             }
 
             if (trait.negativeGenres.Contains(currentGenre))
             {
                 traitChance -= traitChanceDownStep;
+                if (CheckIfTraitIsRevealed(trait))
+                {
+                    displayedTraitChance -= traitChanceDownStep;
+                    print($"Trait {trait} is revealed! displayed trait chance is now {displayedTraitChance}");
+                }
             }
         }
 
@@ -108,11 +134,71 @@ public class SuccessCalculator : MonoBehaviour
             traitChance = 1;
         traitChance *= traitChanceConversion;
 
+        if (displayedTraitChance > 1)
+            displayedTraitChance = 1;
+        displayedTraitChance *= traitChanceConversion;
+
         if (bodyPartChance > 1)
             bodyPartChance = 1;
         bodyPartChance *= bodyPartChanceConversion;
 
         actualChance = baseChance + traitChance + bodyPartChance;
         print($"Trait Chance: {traitChance / traitChanceConversion * 100}\nBodypart Chance: {bodyPartChance / bodyPartChanceConversion * 100}\n Actual Chance: {actualChance * 100}");
+
+        float displayedChance = Mathf.Round((baseChance + displayedTraitChance + bodyPartChance) * 100);
+        print($"Displayed Chance: {displayedChance}");
+
+        if (!CheckIfAllTraitsRevealed())
+        {
+            successChanceText.text = $"Chance of success: {displayedChance}% + ?";
+        }
+        else
+        {
+            successChanceText.text = $"Chance of success: {displayedChance}%";
+        }
+        
+        
+    }
+
+    bool CheckIfTraitIsRevealed(Trait selectedTrait)
+    {
+        for (int i = 0; i < traitTexts.Length; i++)
+        {
+            if (traitTexts[i].text == selectedTrait.traitName)
+                return true;
+        }
+
+        return false;
+    }
+
+    bool CheckIfAllTraitsRevealed()
+    {
+        for (int i = 0; i < traitTexts.Length; i++)
+        {
+            if (traitTexts[i].text == "?")
+                return false;
+        }
+
+        return true;
+    }
+
+    void DetermineSuccess()
+    {
+        CalculateActualChance();
+
+        float randomNum = Random.Range(0f, 101f) / 100f;
+        print($"Num: {randomNum * 100f}");
+        if (randomNum <= actualChance)
+        {
+            eventCore.successfulShowEV.Invoke();
+            print("show is success");
+        }
+        else
+        {
+            eventCore.failureShowEV.Invoke();
+            print("show is failure");
+        }
+
+        
     }
 }
