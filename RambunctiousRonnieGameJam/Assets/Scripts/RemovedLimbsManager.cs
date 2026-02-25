@@ -4,7 +4,7 @@ using UnityEngine;
 public class RemovedLimbsManager : MonoBehaviour
 {
     public List<GameObject> limbsOwned = new List<GameObject>();
-    int LimbsOwned;
+    public int LimbsOwned;
     public GameObject Instantiate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +26,7 @@ public class RemovedLimbsManager : MonoBehaviour
         LimbsOwned++;
         Vector3 pos = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
         GameObject StoredLimb = Instantiate(Instantiate, pos, Quaternion.identity);
+        StoredLimb.tag = Limb.tag;
         StoredLimb.GetComponent<LimbClassification>().Limb = Limb.GetComponent<LimbClassification>().Limb;
         StoredLimb.GetComponent<LimbClassification>().LimbType = Limb.GetComponent<LimbClassification>().LimbType;
     }

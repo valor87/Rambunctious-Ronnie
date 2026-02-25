@@ -10,7 +10,6 @@ public class SelectingLimb : MonoBehaviour
 
     public RemovedLimbsManager RemovedLimbs;
     public LimbClassification LimbClass;
-    Vector2 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +20,6 @@ public class SelectingLimb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         MoveRayCast();
     }
 
@@ -58,7 +55,6 @@ public class SelectingLimb : MonoBehaviour
             {
                 if (hit.collider.gameObject.layer == 7)
                 {
-                    print($"Found inventory {hit.point}");
 
                     hit.collider.gameObject.transform.position
                         = new Vector3(hit.point.x, hit.point.y, hit.collider.gameObject.transform.position.z);
