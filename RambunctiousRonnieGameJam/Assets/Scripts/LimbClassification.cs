@@ -32,6 +32,8 @@ public class LimbClassification : MonoBehaviour
 
     private void Update()
     {
+        if (animator == null)
+            return;
         animator.SetBool("Hover", Hover);
         
     }

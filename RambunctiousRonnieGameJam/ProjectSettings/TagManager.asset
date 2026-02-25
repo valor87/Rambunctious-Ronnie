@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - LeftArm
+  - RightArm
+  - Head
+  - Torso
+  - LeftLeg
+  - RightLeg
   layers:
   - Default
   - TransparentFX
