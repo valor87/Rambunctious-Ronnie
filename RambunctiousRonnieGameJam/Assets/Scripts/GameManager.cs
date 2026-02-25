@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public int endScore = 10;
 
     [Header("References")]
-    public TextMeshProUGUI genreTitle;
     public GameObject approveButtonObj;
     public GameObject denyButtonObj;
 
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        genreTitle.text = $"Genre: {currentShowGenre}";
+        eventCore.updateGenreEV.Invoke(currentShowGenre.ToString());
     }
 
     void increaseScore()
