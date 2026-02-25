@@ -6,47 +6,66 @@ public class SelectingLimb : MonoBehaviour
     public Limb LookingAtLimb;
     public LimbCharacter LookingAtLimbType;
     public LayerMask CharacerLayer;
+    public LayerMask ItemLayer;
 
     public RemovedLimbsManager RemovedLimbs;
     public LimbClassification LimbClass;
+    Vector2 MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         MoveRayCast();
     }
 
     void MoveRayCast()
     {
-        Ray MousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray MouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        Debug.DrawRay(MousePos.origin,Vector3.forward, Color.green);
-
+        Debug.DrawRay(MouseRay.origin, Vector3.forward, Color.green);
         Limb hoverLimb = Limb.None;
         LimbCharacter hoverLimbType = LimbCharacter.None;
-        if (Physics.Raycast(MousePos, out hit, 100, CharacerLayer))
+        if (Physics.Raycast(MouseRay, out hit, 100))
         {
             LimbClass = hit.collider.gameObject.GetComponent<LimbClassification>();
 
-            if (LimbClass != null)
+            if (LimbClass == null)
+                return;
+
+            hoverLimb = LimbClass.Limb;
+            hoverLimbType = LimbClass.LimbType;
+            LimbClass.Hover = true;
+
+            if (Input.GetMouseButtonDown(0))
             {
-                LimbClass.Hover = true;
-                hoverLimb = LimbClass.Limb;
-                hoverLimbType = LimbClass.LimbType;
-                if (Input.GetMouseButtonDown(0))
+                if (hit.collider.gameObject.layer == 6)
                 {
+
                     PlayerInteraction(hit.collider.gameObject);
                 }
+                
             }
 
+            if (Input.GetMouseButton(0))
+            {
+                if (hit.collider.gameObject.layer == 7)
+                {
+                    print($"Found inventory {hit.point}");
+
+                    hit.collider.gameObject.transform.position
+                        = new Vector3(hit.point.x, hit.point.y, hit.collider.gameObject.transform.position.z);
+                }
+            }
             LookingAtLimb = hoverLimb;
             LookingAtLimbType = hoverLimbType;
-            print("Hit Player");
         }
         else
         {

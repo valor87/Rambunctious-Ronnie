@@ -153,6 +153,9 @@ MonoBehaviour:
   CharacerLayer:
     serializedVersion: 2
     m_Bits: 64
+  ItemLayer:
+    serializedVersion: 2
+    m_Bits: 0
   RemovedLimbs: {fileID: 707807244}
   LimbClass: {fileID: 0}
 --- !u!4 &402423564
@@ -196,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 707807242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -489,7 +492,7 @@ Transform:
   m_GameObject: {fileID: 1487596959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.7, z: -1.6}
+  m_LocalPosition: {x: 0.01, y: 0.7, z: 1.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -592,7 +595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
       propertyPath: m_LocalRotation.w
