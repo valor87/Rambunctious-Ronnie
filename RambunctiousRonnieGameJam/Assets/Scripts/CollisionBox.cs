@@ -19,18 +19,23 @@ public class CollisionBox : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isTrash)
-            Destroy(other.gameObject);
+            GetRidOfLimb(other.gameObject);
+
         if (other.gameObject.CompareTag(tagLookingFor))
         {
             print($"Found an object with a {tagLookingFor}");
-            Destroy(other.gameObject);
-            RemovableLimbManager.limbsOwned.Remove(other.gameObject);
-            RemovableLimbManager.LimbsOwned--;
+            GetRidOfLimb(other.gameObject);
             limb.SetActive(true);
             return;
         }
 
         print($"Found a limb but its not a {tagLookingFor}");
     }
-  
+
+    void GetRidOfLimb(GameObject Limb)
+    {
+        Destroy(Limb);
+        RemovableLimbManager.limbsOwned.Remove(Limb.gameObject);
+        RemovableLimbManager.LimbsOwned--;
+    }
 }
