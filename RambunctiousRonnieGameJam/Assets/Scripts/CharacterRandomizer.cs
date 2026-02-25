@@ -14,7 +14,7 @@ public class CharacterRandomizer : MonoBehaviour
 
         eventCore.createNewCharacterEV.AddListener(RandomizeCharacter);
         eventCore.approveCharacterEV.AddListener(RandomizeCharacter);
-        eventCore.denyCharacterEV.AddListener (RandomizeCharacter); //temporary for now, remove once swappig body parts is in
+        eventCore.denyCharacterEV.AddListener(RandomizeCharacter); //temporary for now, remove once swappig body parts is in
     }
 
     //you can test out spawning through the context menu
