@@ -1,16 +1,27 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterValues : MonoBehaviour  
 {
+    [Header("Important Data")]
     public Character CharactersValues;
+    public GameObject characterHitboxes;
     public List<GameObject> ChildObjectsBodyParts;
+
+    [Header("Miscellanous")]
+    public float moveSpeed = 2f;
+    public float deleteTimer = 2f;
     EventCore eventCore; 
     string type;
     private void Start()
     {
+        characterHitboxes = transform.Find("CharacterHitBoxes").gameObject;
+        
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        eventCore.approveCharacterEV.AddListener(MoveOffScreen);
+        eventCore.denyCharacterEV.AddListener(DisableHitboxes);
         
         // gets the list of the children
         SetChildrenToAList(this.gameObject, ChildObjectsBodyParts);
@@ -72,7 +83,11 @@ public class CharacterValues : MonoBehaviour
         for (int i = 0; i < ChildrenCount; i++)
         {
             GameObject ChildAtIndex = Parent.transform.GetChild(i).gameObject;
-            ChildObjectsBodyParts.Add(ChildAtIndex);
+            if (!ChildAtIndex.CompareTag("Untagged"))
+            {
+                ChildObjectsBodyParts.Add(ChildAtIndex);
+            }
+            
         }
     }
 
@@ -85,5 +100,33 @@ public class CharacterValues : MonoBehaviour
         }
 
         return true;
+    }
+
+    void DisableHitboxes()
+    {
+        characterHitboxes.SetActive(false);
+    }
+
+    void MoveOffScreen()
+    {
+        characterHitboxes.SetActive(false);
+        StartCoroutine(MovingOffScreen());
+    }
+
+    IEnumerator MovingOffScreen()
+    {
+        Vector3 newPos = transform.position;
+        float timer = 0f;
+        while (timer < deleteTimer)
+        {
+            newPos.x += moveSpeed * Time.deltaTime;
+            transform.position = newPos;
+            timer += Time.deltaTime;
+            yield return Time.deltaTime;
+        }
+
+        Destroy(gameObject);
+        yield return null;
+        
     }
 }
