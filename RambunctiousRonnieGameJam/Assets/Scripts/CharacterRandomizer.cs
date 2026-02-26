@@ -43,6 +43,8 @@ public class CharacterRandomizer : MonoBehaviour
 
         characterObj.CharactersValues.Randomize(listOfAllTraits);
         characterObj.gameObject.name = "Character";
+
+        SetCharacterVisuals(characterObj.CharactersValues, characterGameObject);
         eventCore.setNewCharacterEV.Invoke(characterObj.gameObject);
 
     }
