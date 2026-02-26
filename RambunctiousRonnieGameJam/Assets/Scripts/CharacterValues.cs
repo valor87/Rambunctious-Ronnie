@@ -11,6 +11,7 @@ public class CharacterValues : MonoBehaviour
     public List<GameObject> ChildObjectsBodyParts;
 
     [Header("Miscellanous")]
+    public GameObject parentOfLimbs;
     public float moveSpeed = 2f;
     public float deleteTimer = 2f;
     EventCore eventCore; 
@@ -22,11 +23,17 @@ public class CharacterValues : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
         eventCore.approveCharacterEV.AddListener(MoveOffScreen);
         eventCore.denyCharacterEV.AddListener(DisableHitboxes);
-        
-        // gets the list of the children
-        SetChildrenToAList(this.gameObject, ChildObjectsBodyParts);
         int index = 1;
 
+        // gets the list of the children
+        if (parentOfLimbs == null)
+        {
+            SetChildrenToAList(this.gameObject, ChildObjectsBodyParts);
+        }
+        else
+        {
+            SetChildrenToAList(parentOfLimbs, ChildObjectsBodyParts);
+        }
         // sets limbValue and limbType
         foreach (GameObject childObject in ChildObjectsBodyParts)
         {

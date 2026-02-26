@@ -44,8 +44,8 @@ public class CharacterRandomizer : MonoBehaviour
         characterObj.CharactersValues.Randomize(listOfAllTraits);
         characterObj.gameObject.name = "Character";
 
-        SetCharacterVisuals(characterObj.CharactersValues, characterGameObject);
-        eventCore.setNewCharacterEV.Invoke(characterObj.gameObject);
+        SetCharacterVisuals(characterObj.CharactersValues, characterGameObject.transform.Find("SpikyFullyRigged").gameObject);
+        eventCore.setNewCharacterEV.Invoke(characterGameObject);
 
     }
     void SetCharacterVisuals(Character characterObj, GameObject randomCharacter)
@@ -57,7 +57,10 @@ public class CharacterRandomizer : MonoBehaviour
                 case (Limb.head):
                     if (possibleLimbs[i].limbCharacter == characterObj.head)
                     {
-                        randomCharacter.transform.Find("Head").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                        SkinnedMeshRenderer LimbMesh = randomCharacter.transform.Find("Head").GetComponent<SkinnedMeshRenderer>();
+                        LimbMesh.sharedMesh = possibleLimbs[i].limbSkin;
+                        LimbMesh.materials = possibleLimbs[i].limbMaterials;
+
                     }
                     break;
                 case (Limb.torso):

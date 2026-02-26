@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagLookingFor: RightLeg
-  limb: {fileID: 0}
+  limb: {fileID: 1937000569090478386}
   isTrash: 0
 --- !u!1 &1045552289236604892
 GameObject:
@@ -118,6 +118,7 @@ MonoBehaviour:
   CharactersValues: {fileID: 11400000, guid: da8e41b08533ff044a62ed2734351366, type: 2}
   characterHitboxes: {fileID: 0}
   ChildObjectsBodyParts: []
+  parentOfLimbs: {fileID: 5899071485313246757}
   moveSpeed: 2
   deleteTimer: 2
 --- !u!1 &1264407936161388014
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagLookingFor: RightArm
-  limb: {fileID: 0}
+  limb: {fileID: 4304207793166662508}
   isTrash: 0
 --- !u!1 &2473343302035179654
 GameObject:
@@ -256,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagLookingFor: Torso
-  limb: {fileID: 0}
+  limb: {fileID: 6182655766650765084}
   isTrash: 0
 --- !u!1 &3017094559710680904
 GameObject:
@@ -325,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagLookingFor: LeftLeg
-  limb: {fileID: 0}
+  limb: {fileID: 1047069789617404457}
   isTrash: 0
 --- !u!1 &3819585689230984422
 GameObject:
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagLookingFor: LeftArm
-  limb: {fileID: 0}
+  limb: {fileID: 7371012680719873336}
   isTrash: 0
 --- !u!1 &4569481321298909619
 GameObject:
@@ -463,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagLookingFor: Head
-  limb: {fileID: 0}
+  limb: {fileID: 2411883353100365656}
   isTrash: 0
 --- !u!1 &6363701737185758491
 GameObject:
@@ -532,7 +533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.171
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -566,24 +567,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightLeg
       objectReference: {fileID: 0}
+    - target: {fileID: -4035994570920015290, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
+      value: RightLeg
+      objectReference: {fileID: 0}
     - target: {fileID: -3198910341953724067, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_Name
       value: LeftLeg
       objectReference: {fileID: 0}
+    - target: {fileID: -3198910341953724067, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
+      value: LeftLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: -259972160606440404, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
+      value: Head
+      objectReference: {fileID: 0}
     - target: {fileID: 635547659545568360, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_Name
+      value: Torso
+      objectReference: {fileID: 0}
+    - target: {fileID: 635547659545568360, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
       value: Torso
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_Name
       value: SpikyFullyRigged
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4276105628545674828, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_Name
       value: LeftArm
       objectReference: {fileID: 0}
+    - target: {fileID: 4276105628545674828, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
+      value: LeftArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7396953196769107992, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
       propertyPath: m_Name
+      value: RightArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396953196769107992, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+      propertyPath: m_TagString
       value: RightArm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -792,6 +825,11 @@ MonoBehaviour:
   Hover: 0
   Limb: 0
   LimbType: 0
+--- !u!1 &5899071485313246757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+  m_PrefabInstance: {fileID: 6709483367440997236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6182655766650765084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 635547659545568360, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
