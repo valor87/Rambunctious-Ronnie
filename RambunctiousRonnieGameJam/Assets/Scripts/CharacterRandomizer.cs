@@ -23,7 +23,7 @@ public class CharacterRandomizer : MonoBehaviour
     {
         ShiftCharacterToOld();
 
-        Vector3 randomPos = new Vector3(Random.Range(-0.7f, 0.7f), 1.2f, -8);
+        Vector3 randomPos = new Vector3(Random.Range(-0.7f, 0.7f), 1.2f, -8); //should change to a set position once game is more developed
         CharacterValues characterObj = Instantiate(characterPrefab, randomPos, Quaternion.identity).GetComponent<CharacterValues>();
         characterObj.CharactersValues = Character.CreateInstance<Character>();
 

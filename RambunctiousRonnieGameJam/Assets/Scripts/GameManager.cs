@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public int maxQuestions = 5;
 
     [Header("References")]
-    public GameObject characterInteractionManagerObj;
+    public SelectingLimb characterInteractionManagerObj;
     public GameObject approveButtonObj;
     public GameObject denyButtonObj;
 
@@ -28,14 +28,14 @@ public class GameManager : MonoBehaviour
     {
         if (characterInteractionManagerObj == null)
         {
-            characterInteractionManagerObj = GameObject.Find("CharacterInteractionManager");
+            characterInteractionManagerObj = GameObject.Find("CharacterInteractionManager").GetComponent<SelectingLimb>();
             if (characterInteractionManagerObj == null)
             {
                 Debug.LogError("Could not find character interaction manager.");
             }
             else
             {
-                characterInteractionManagerObj.SetActive(false);
+                //characterInteractionManagerObj.SetActive(false);
             }
         }
         
@@ -54,12 +54,12 @@ public class GameManager : MonoBehaviour
     void BeginSalvagePhase()
     {
         denialAmount++;
-        characterInteractionManagerObj.SetActive(true);
+        characterInteractionManagerObj.salvagePhase = true;
     }
 
     void EndSalvagePhase()
     {
-        characterInteractionManagerObj.SetActive(false);
+        characterInteractionManagerObj.salvagePhase = false;
         eventCore.createNewCharacterEV.Invoke();
     }
 
