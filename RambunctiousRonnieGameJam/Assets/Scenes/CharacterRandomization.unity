@@ -1521,6 +1521,158 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861d9c0cd6657a6408ded5eba3c716a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleLimbs:
+  - limbName: SpikyHead
+    limbType: 1
+    limbCharacter: 1
+    limbSkin: {fileID: -8839368762345780380, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 476d6e411cade0441a19fd69b728d83d, type: 2}
+    - {fileID: 2100000, guid: c217622ade70df24ba84556292703bbd, type: 2}
+  - limbName: SpikyTorso
+    limbType: 2
+    limbCharacter: 1
+    limbSkin: {fileID: 2959467708922500008, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 668249a6a27765141a30dc230bf9313f, type: 2}
+    - {fileID: 2100000, guid: d963e90ff14fc0543993e6e073cafa45, type: 2}
+  - limbName: SpikyLeftArm
+    limbType: 3
+    limbCharacter: 1
+    limbSkin: {fileID: -1549809240355589158, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: ec8db7280e3d7a34a9043592945aeb67, type: 2}
+  - limbName: SpikyRightArm
+    limbType: 4
+    limbCharacter: 1
+    limbSkin: {fileID: 1091708775448479316, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 9a89389830592744abaa51005c6b2104, type: 2}
+  - limbName: SpikyLeftLeg
+    limbType: 5
+    limbCharacter: 1
+    limbSkin: {fileID: 5346406656010950165, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 3c1cc636ccf43bb479b67530016213f6, type: 2}
+  - limbName: SpikyRightLeg
+    limbType: 6
+    limbCharacter: 1
+    limbSkin: {fileID: 404080794196398631, guid: 7b346900de2adae4e9b67c8bab4216e7, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 3c1cc636ccf43bb479b67530016213f6, type: 2}
+  - limbName: CurvyHead
+    limbType: 1
+    limbCharacter: 4
+    limbSkin: {fileID: -3288177261106981545, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: c1f592f0643b7dd449e80acbd57cb351, type: 2}
+    - {fileID: 2100000, guid: 00c9fde8703b4b8409ab76c9248ca7bb, type: 2}
+  - limbName: CurvyTorso
+    limbType: 2
+    limbCharacter: 4
+    limbSkin: {fileID: -6536541405265177045, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 8141aa31ee5aa724ba735fcd7b825b39, type: 2}
+    - {fileID: 2100000, guid: 3ab0584efc7f92849a26c3f14e49360a, type: 2}
+  - limbName: CurvyLeftArm
+    limbType: 3
+    limbCharacter: 4
+    limbSkin: {fileID: -4364176071067337721, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 0becd6aad5b968846b3d6fa658613e57, type: 2}
+  - limbName: CurvyRightArm
+    limbType: 4
+    limbCharacter: 4
+    limbSkin: {fileID: -2077019879261555594, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 44ff4b468fbec1745979c8d224567470, type: 2}
+  - limbName: CurvyLeftLeg
+    limbType: 5
+    limbCharacter: 4
+    limbSkin: {fileID: 7788461963600343028, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 4f5c6ca79e585ea4bb3737b158f0fbf9, type: 2}
+  - limbName: CurvyRightLeg
+    limbType: 6
+    limbCharacter: 4
+    limbSkin: {fileID: 5937499262685587904, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 4f5c6ca79e585ea4bb3737b158f0fbf9, type: 2}
+  - limbName: ThinHead
+    limbType: 1
+    limbCharacter: 2
+    limbSkin: {fileID: -3548169536508029648, guid: f7f5ced6e44503747a3387f8784ce0ba, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: d8924c993d89c614480e63e42b2e06e4, type: 2}
+    - {fileID: 2100000, guid: ffbf144e1f5a3b8418a5aee9a3c276ef, type: 2}
+  - limbName: ThinTorso
+    limbType: 2
+    limbCharacter: 2
+    limbSkin: {fileID: 6757781797928419927, guid: f7f5ced6e44503747a3387f8784ce0ba, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: a6f17039d949fe0488170b6eb8b02446, type: 2}
+  - limbName: ThinLeftLeg
+    limbType: 5
+    limbCharacter: 2
+    limbSkin: {fileID: -5380415380712455975, guid: f7f5ced6e44503747a3387f8784ce0ba, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: f8fe7471835febc46bab08c32d16415a, type: 2}
+  - limbName: ThinRightLeg
+    limbType: 6
+    limbCharacter: 2
+    limbSkin: {fileID: 6993363006270967464, guid: f7f5ced6e44503747a3387f8784ce0ba, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 11009774319ef7e48a31f083466d999a, type: 2}
+  - limbName: ThinLeftArm
+    limbType: 3
+    limbCharacter: 2
+    limbSkin: {fileID: -6379727528363951778, guid: f7f5ced6e44503747a3387f8784ce0ba, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 8ab059444f68a254e9191f86b6c8b234, type: 2}
+  - limbName: ThinArmRight
+    limbType: 4
+    limbCharacter: 2
+    limbSkin: {fileID: 1321936586014870501, guid: f7f5ced6e44503747a3387f8784ce0ba, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 24d2edd5fa6f4164d80106e08184319f, type: 2}
+  - limbName: BuffHead
+    limbType: 1
+    limbCharacter: 3
+    limbSkin: {fileID: 2508119142066525030, guid: abf00248cdec79e4c9f296618892374a, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: efe99b6aa721ae84c8557cabdf2ee762, type: 2}
+    - {fileID: 2100000, guid: 3ef27f400182f2640860444fbbc1feac, type: 2}
+  - limbName: BuffTorso
+    limbType: 2
+    limbCharacter: 3
+    limbSkin: {fileID: -8947355853129735389, guid: abf00248cdec79e4c9f296618892374a, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: b5ca237a1b50b1744bb433e7f4c5636d, type: 2}
+    - {fileID: 2100000, guid: 0a814a4240717774eb5695cc1aebe281, type: 2}
+  - limbName: BuffLeftArm
+    limbType: 3
+    limbCharacter: 3
+    limbSkin: {fileID: 3639246464032032774, guid: abf00248cdec79e4c9f296618892374a, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: c8fd24df35ca5d645a82472f7f891d07, type: 2}
+  - limbName: BuffRightArm
+    limbType: 4
+    limbCharacter: 3
+    limbSkin: {fileID: -7746446356975985213, guid: abf00248cdec79e4c9f296618892374a, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: 02bbb180237401b45b99e209cdd8859e, type: 2}
+  - limbName: BuffLeftLeg
+    limbType: 5
+    limbCharacter: 3
+    limbSkin: {fileID: 9059174762346320972, guid: abf00248cdec79e4c9f296618892374a, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: d9f770a2f85806849ae1414ec7d7b328, type: 2}
+  - limbName: BuffRightLeg
+    limbType: 6
+    limbCharacter: 3
+    limbSkin: {fileID: -5161889724759300236, guid: abf00248cdec79e4c9f296618892374a, type: 3}
+    limbMaterials:
+    - {fileID: 2100000, guid: b652e4c2f210d7f40a4185a0a1dd34d6, type: 2}
   characterPrefab: {fileID: 2880296940611716119, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
   listOfAllTraits:
   - {fileID: 11400000, guid: 10cd6cfa10c047e48accda1f214da0b5, type: 2}
@@ -2963,7 +3115,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 251362105}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.38175187
+  m_Size: 0.38175184
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6169,7 +6321,7 @@ MonoBehaviour:
   lives: 3
   showNum: 0
   showEndNum: 10
-  startingCharacters: 10
+  startingCharactersNum: 10
   charactersLeft: 0
   questionsAsked: 0
   maxQuestions: 5
