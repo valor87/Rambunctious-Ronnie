@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class RandomChance : ActionTask {
+	public class RandomChanceAT : ActionTask {
 		public BBParameter<int> randomNumber;
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise

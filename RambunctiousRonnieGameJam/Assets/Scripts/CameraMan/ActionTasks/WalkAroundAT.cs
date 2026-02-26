@@ -45,11 +45,9 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			Debug.Log(destination);
 			float distance = Vector3.Distance(agent.transform.position, destination);
 			if (navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete && distance < arrivalDistance)
 			{
-				Debug.Log("Done pathing");
 				EndAction(true);
 			}
 		}
