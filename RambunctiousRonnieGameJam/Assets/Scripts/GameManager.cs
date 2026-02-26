@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         eventCore.changeGenreEV.AddListener(ChangeGenre);
         eventCore.denyCharacterEV.AddListener(BeginSalvagePhase);
         eventCore.endSalvagePhaseEV.AddListener(EndSalvagePhase);
-        eventCore.approveCharacterEV.AddListener(ResetCharactersAmount);
+        eventCore.followApproveCharacterEV.AddListener(ResetCharactersAmount);
 
         eventCore.successfulShowEV.AddListener(IncreaseScore);
         eventCore.successfulShowEV.AddListener(ChangeGenre);
