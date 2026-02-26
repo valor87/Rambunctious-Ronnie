@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     public SelectingLimb characterInteractionManagerObj;
+    public CharacterRandomizer characterRandomizerObj;
     public GameObject approveButtonObj;
     public GameObject denyButtonObj;
 
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         charactersLeft = startingCharactersNum;
-        
+
         if (characterInteractionManagerObj == null)
         {
             characterInteractionManagerObj = GameObject.Find("CharacterInteractionManager").GetComponent<SelectingLimb>();
@@ -35,12 +36,17 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("Could not find character interaction manager.");
             }
-            else
+        }
+
+        if (characterRandomizerObj == null)
+        {
+            characterRandomizerObj = GameObject.Find("CharacterRandomizer").GetComponent<CharacterRandomizer>();
+            if (characterRandomizerObj == null)
             {
-                //characterInteractionManagerObj.SetActive(false);
+                Debug.LogError("Could not find character randomizer.");
             }
         }
-        
+
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
         eventCore.askQuestionEV.AddListener(UseUpQuestion);
@@ -54,6 +60,7 @@ public class GameManager : MonoBehaviour
         eventCore.failureShowEV.AddListener(DecreaseLives);
 
         ChangeGenre();
+        eventCore.CreateNewCharacterDelayedInvokeEV(1);
     }
 
     void UseUpQuestion(Question _unusedQuestion)

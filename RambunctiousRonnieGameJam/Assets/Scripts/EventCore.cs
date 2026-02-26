@@ -85,6 +85,16 @@ public class EventCore : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    public void CreateNewCharacterDelayedInvokeEV(float delay)
+    {
+        Invoke("CreateNewCharacterInvokeEV", delay);
+    }
+
+    public void CreateNewCharacterInvokeEV()
+    {
+        createNewCharacterEV.Invoke();
+    }
+
     public void ApproveCharacterInvokeEV()
     {
         GameObject oldCharacter = GameObject.Find("OldCharacter");
