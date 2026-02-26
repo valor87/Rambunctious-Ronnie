@@ -10,7 +10,14 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int endScore = 10;
 
+    public int denialAmount = 0;
+    public int maxDenials = 10;
+
+    public int questionsAsked = 0;
+    public int maxQuestions = 5;
+
     [Header("References")]
+    public GameObject characterInteractionManagerObj;
     public GameObject approveButtonObj;
     public GameObject denyButtonObj;
 
@@ -19,16 +26,44 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (characterInteractionManagerObj == null)
+        {
+            characterInteractionManagerObj = GameObject.Find("CharacterInteractionManager");
+            if (characterInteractionManagerObj == null)
+            {
+                Debug.LogError("Could not find character interaction manager.");
+            }
+            else
+            {
+                characterInteractionManagerObj.SetActive(false);
+            }
+        }
+        
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        eventCore.changeGenreEV.AddListener(changeGenre);
-        eventCore.successfulShowEV.AddListener(increaseScore);
-        eventCore.successfulShowEV.AddListener(changeGenre);
-        eventCore.failureShowEV.AddListener(decreaseLives);
+        eventCore.changeGenreEV.AddListener(ChangeGenre);
+        eventCore.denyCharacterEV.AddListener(BeginSalvagePhase);
+        eventCore.endSalvagePhaseEV.AddListener(EndSalvagePhase);
 
-        changeGenre();
+        eventCore.successfulShowEV.AddListener(IncreaseScore);
+        eventCore.successfulShowEV.AddListener(ChangeGenre);
+        eventCore.failureShowEV.AddListener(DecreaseLives);
+
+        ChangeGenre();
     }
 
-    void changeGenre()
+    void BeginSalvagePhase()
+    {
+        denialAmount++;
+        characterInteractionManagerObj.SetActive(true);
+    }
+
+    void EndSalvagePhase()
+    {
+        characterInteractionManagerObj.SetActive(false);
+        eventCore.createNewCharacterEV.Invoke();
+    }
+
+    void ChangeGenre()
     {
         while (true)
         {
@@ -43,7 +78,7 @@ public class GameManager : MonoBehaviour
         eventCore.updateGenreEV.Invoke(currentShowGenre.ToString());
     }
 
-    void increaseScore()
+    void IncreaseScore()
     {
         score++;
         if (score >= endScore)
@@ -53,7 +88,7 @@ public class GameManager : MonoBehaviour
         }
     }  
 
-    void decreaseLives()
+    void DecreaseLives()
     {
         lives--;
         if (lives <= 0)

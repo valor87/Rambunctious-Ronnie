@@ -24,8 +24,11 @@ public class CollisionBox : MonoBehaviour
         if (other.gameObject.CompareTag(tagLookingFor))
         {
             print($"Found an object with a {tagLookingFor}");
+            LimbClassification limbData = limb.GetComponent<LimbClassification>();
+            limbData.LimbType = other.gameObject.GetComponent<LimbClassification>().LimbType;
+
             GetRidOfLimb(other.gameObject);
-            limb.SetActive(true);
+            limb.SetActive(true); //might be pointless later since swapping body parts only work when character has all of their body parts
             return;
         }
 

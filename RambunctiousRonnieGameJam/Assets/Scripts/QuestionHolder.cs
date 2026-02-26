@@ -5,12 +5,14 @@ using UnityEngine.UI;
 public class QuestionHolder : MonoBehaviour
 {
     EventCore eventCore;
+    GameManager gameManager;
     public TextMeshProUGUI textObj;
     public Question question;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         eventCore.winGameEV.AddListener(disableSelf);
         eventCore.loseGameEV.AddListener(disableSelf);
 
@@ -20,6 +22,19 @@ public class QuestionHolder : MonoBehaviour
         }
 
         textObj.text = question.questionText;
+    }
+
+    private void Update()
+    {
+        //hides questions if exceeded amount of questions
+        if (gameManager.questionsAsked >= gameManager.maxQuestions)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
     }
 
     public void invokeAskQuestion()

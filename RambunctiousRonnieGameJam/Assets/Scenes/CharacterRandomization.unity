@@ -1938,6 +1938,9 @@ MonoBehaviour:
   denyCharacterEV:
     m_PersistentCalls:
       m_Calls: []
+  endSalvagePhaseEV:
+    m_PersistentCalls:
+      m_Calls: []
   successfulShowEV:
     m_PersistentCalls:
       m_Calls: []
@@ -3008,15 +3011,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.12
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.66
+      value: -8.03
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3673,6 +3676,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980897939}
   m_CullTransparentMesh: 1
+--- !u!1001 &995822865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2880296940611716119, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_Name
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0091909
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305475426138737163, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdd65413357532a478ef20a0360ee0f1, type: 3}
 --- !u!1 &1001002126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,6 +5799,11 @@ MonoBehaviour:
   lives: 3
   score: 0
   endScore: 10
+  denialAmount: 0
+  maxDenials: 10
+  questionsAsked: 0
+  maxQuestions: 5
+  characterInteractionManagerObj: {fileID: 0}
   approveButtonObj: {fileID: 1148583203}
   denyButtonObj: {fileID: 2130067233}
 --- !u!4 &1779753467
@@ -6224,6 +6289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterInteractionManager
       objectReference: {fileID: 0}
+    - target: {fileID: 500371333523279167, guid: e8357876948371b46902899356a72a47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3786478234211764613, guid: e8357876948371b46902899356a72a47, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.43305326
@@ -6637,3 +6706,4 @@ SceneRoots:
   - {fileID: 2084308023}
   - {fileID: 1285799982}
   - {fileID: 735208976}
+  - {fileID: 995822865}

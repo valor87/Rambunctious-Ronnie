@@ -40,11 +40,11 @@ public class SuccessCalculator : MonoBehaviour
     List<LimbCharacter> correspondingGenresToLimbTypes = new List<LimbCharacter>() {
         LimbCharacter.None, //genre: none
         LimbCharacter.Spiky, //genre: LateNightTalkShow
-        LimbCharacter.Fit, //genre: Improv
+        LimbCharacter.Spiky, //genre: Improv
         LimbCharacter.Thin, //genre: MysteryThriller
         LimbCharacter.Buff, //genre: PoliceShow
         LimbCharacter.Buff, //genre: ActionShow
-        LimbCharacter.Fit, //genre: RealitySurvivalShow
+        LimbCharacter.Buff, //genre: RealitySurvivalShow
         LimbCharacter.Curvy, //genre: DatingCompetition
         LimbCharacter.Thin, //genre: Horror
         LimbCharacter.Curvy, //genre: Romcom

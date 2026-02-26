@@ -58,12 +58,6 @@ public class CharacterStatMenu : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void UpdateGenreTitle(string tempGenreTitle)
     {
         genreTitle.text = tempGenreTitle;
