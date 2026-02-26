@@ -60,6 +60,10 @@ public class SuccessCalculator : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
+        eventCore.calculateSuccessChanceEV.AddListener(CalculateActualChance);
+        eventCore.setNewCharacterEV.AddListener(SetNewCharacter);
+        eventCore.followApproveCharacterEV.AddListener(DetermineSuccess);
+
         GameObject canvas = GameObject.Find("Canvas");
         if (characterStatMenu == null)
         {
@@ -70,9 +74,7 @@ public class SuccessCalculator : MonoBehaviour
             }
         }
 
-        eventCore.calculateSuccessChanceEV.AddListener(CalculateActualChance);
-        eventCore.setNewCharacterEV.AddListener(SetNewCharacter);
-        eventCore.approveCharacterEV.AddListener(DetermineSuccess);
+
     }
 
     void SetNewCharacter(GameObject newCharacterObj)
@@ -107,7 +109,6 @@ public class SuccessCalculator : MonoBehaviour
                     displayedTraitChance += traitChanceUpStep;
                     print($"Trait {trait} is revealed! displayed trait chance is now {displayedTraitChance}");
                 }
-                    
 
                 continue;
             }
@@ -171,7 +172,5 @@ public class SuccessCalculator : MonoBehaviour
             eventCore.failureShowEV.Invoke();
             print("show is failure");
         }
-
-        
     }
 }

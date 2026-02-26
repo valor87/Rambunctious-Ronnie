@@ -143,7 +143,6 @@ public class CharacterStatMenu : MonoBehaviour
         return false;
     }
 
-
     bool CheckIfAllTraitsRevealed()
     {
         for (int i = 0; i < traitTexts.Length; i++)

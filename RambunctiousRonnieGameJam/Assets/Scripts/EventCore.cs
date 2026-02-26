@@ -52,7 +52,9 @@ public class EventCore : MonoBehaviour
 
     //events for approving or denying a character. either checks if show succeeds through chance or begins the salvaging phase
     [HideInInspector]
-    public UnityEvent approveCharacterEV;
+    public UnityEvent approveCharacterEV; //movement of character to off-screen happens here
+    [HideInInspector]
+    public UnityEvent followApproveCharacterEV; //event that follows approveCharacterEV. determining if show is successful happens here
     [HideInInspector]
     public UnityEvent denyCharacterEV;
 

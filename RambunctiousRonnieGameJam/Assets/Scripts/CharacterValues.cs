@@ -125,6 +125,7 @@ public class CharacterValues : MonoBehaviour
             yield return Time.deltaTime;
         }
 
+        eventCore.followApproveCharacterEV.Invoke();
         Destroy(gameObject);
         yield return null;
         
