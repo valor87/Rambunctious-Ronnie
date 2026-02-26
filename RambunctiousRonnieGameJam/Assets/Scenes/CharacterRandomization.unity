@@ -1592,13 +1592,13 @@ MonoBehaviour:
   - limbName: CurvyLeftLeg
     limbType: 5
     limbCharacter: 4
-    limbSkin: {fileID: 7788461963600343028, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbSkin: {fileID: 5937499262685587904, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
     limbMaterials:
     - {fileID: 2100000, guid: 4f5c6ca79e585ea4bb3737b158f0fbf9, type: 2}
   - limbName: CurvyRightLeg
     limbType: 6
     limbCharacter: 4
-    limbSkin: {fileID: 5937499262685587904, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
+    limbSkin: {fileID: 7788461963600343028, guid: 4f15b73c490ca1342b89f80dbf12c219, type: 3}
     limbMaterials:
     - {fileID: 2100000, guid: 4f5c6ca79e585ea4bb3737b158f0fbf9, type: 2}
   - limbName: ThinHead

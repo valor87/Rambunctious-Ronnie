@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 public enum LimbCharacter
 {
@@ -22,35 +23,43 @@ public class LimbClassification : MonoBehaviour
     public bool Hover;
     public Limb Limb;
     public LimbCharacter LimbType;
-    Animator animator;
+    public Animator boneAnimator;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        StartCoroutine(TurnHoverOff());
     }
 
     private void Update()
     {
-        if (animator == null)
+        if (boneAnimator == null)
             return;
-        animator.SetBool("Hover", Hover);
+        boneAnimator.SetBool("Hover", Hover);
         
     }
 
     public void StopAnimation()
     {
         Hover = false;
-        animator.SetBool("Hover", false);
+        boneAnimator.SetBool("Hover", false);
     }
 
     public void playRemoveAnimation()
     {
         StopAnimation();
-        animator.SetTrigger("Remove");
+        boneAnimator.SetTrigger("Remove");
     }
 
     public void DestroyLimb()
     {
         this.gameObject.SetActive(false);
+    }
+    IEnumerator TurnHoverOff()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(.5f);
+            Hover = false;
+        }
     }
 }

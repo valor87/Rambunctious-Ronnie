@@ -29,6 +29,7 @@ public class CollisionBox : MonoBehaviour
 
             GetRidOfLimb(other.gameObject);
             limb.SetActive(true); //might be pointless later since swapping body parts only work when character has all of their body parts
+            limb.GetComponent<LimbClassification>().Hover = false;
             return;
         }
 

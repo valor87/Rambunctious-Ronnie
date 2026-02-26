@@ -14,7 +14,7 @@ public class SelectingLimb : MonoBehaviour
     public RemovedLimbsManager RemovedLimbs;
     public LimbClassification LimbClass;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool salvagePhase = false;
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class SelectingLimb : MonoBehaviour
                 {
                     RemoveLimbInteraction(hit.collider.gameObject);
                 }
-                
+
             }
             // the plaeyr is moving the ui limb
             if (Input.GetMouseButton(0))
@@ -63,13 +63,8 @@ public class SelectingLimb : MonoBehaviour
             LookingAtLimb = hoverLimb;
             LookingAtLimbType = hoverLimbType;
         }
-        else
-        {
-            if (LimbClass != null)
-            {
-                LimbClass.Hover = false;
-            }
-        }
+        
+
     }
 
     void moveLimbFromInventory(GameObject LC, Vector3 hit)
@@ -89,6 +84,7 @@ public class SelectingLimb : MonoBehaviour
     IEnumerator RemoveLimb(GameObject LC)
     {
         yield return new WaitForSeconds(1);
+        LC.gameObject.SetActive(false);
         RemovedLimbs.SeveredLimb(LC);
     }
 }
