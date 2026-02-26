@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class EventCore : MonoBehaviour
 {
+    GameManager gameManager;
+    
     [HideInInspector]
     //event for creating a character, also randomizing their appearance and traits
     public UnityEvent createNewCharacterEV;
@@ -24,6 +26,7 @@ public class EventCore : MonoBehaviour
     //event for changing genres. should happen once the player gets a successful show, which could also be an event in itself
     public UnityEvent changeGenreEV;
 
+    [HideInInspector]
     //event for updating the genre in the character stat menu. follows changeGenreEV
     public UnityEvent<string> updateGenreEV;
 
@@ -41,6 +44,10 @@ public class EventCore : MonoBehaviour
     [HideInInspector]
     public UnityEvent denyCharacterEV;
 
+    //event for ending a salvage phase. should be done when character has no body parts and then spawn a new random character
+    [HideInInspector]
+    public UnityEvent endSalvagePhaseEV;
+
     //events for succeeding or failing a show. changes either score or lives and should make a new character
     [HideInInspector]
     public UnityEvent successfulShowEV;
@@ -55,6 +62,10 @@ public class EventCore : MonoBehaviour
     [HideInInspector]
     public UnityEvent loseGameEV;
 
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     public void ApproveCharacterInvokeEV()
     {
@@ -70,7 +81,7 @@ public class EventCore : MonoBehaviour
     public void DenyCharacterInvokeEV()
     {
         GameObject oldCharacter = GameObject.Find("OldCharacter");
-        if (oldCharacter == null)
+        if (oldCharacter == null && gameManager.denialAmount < gameManager.maxDenials)
         {
             print("deny character invoked");
             denyCharacterEV.Invoke();

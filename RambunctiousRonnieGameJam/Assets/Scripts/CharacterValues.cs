@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CharacterValues : MonoBehaviour  
 {
     public Character CharactersValues;
     public List<GameObject> ChildObjectsBodyParts;
+    EventCore eventCore; 
     string type;
     private void Start()
     {
+        eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        
         // gets the list of the children
         SetChildrenToAList(this.gameObject, ChildObjectsBodyParts);
         int index = 1;
@@ -53,6 +55,15 @@ public class CharacterValues : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (CheckIfAllBodyPartsGone())
+        {
+            eventCore.endSalvagePhaseEV.Invoke();
+            Destroy(gameObject);
+        }
+    }
+
     // puts all the children of an object into a list
     void SetChildrenToAList(GameObject Parent, List<GameObject> Children)
     {
@@ -63,5 +74,16 @@ public class CharacterValues : MonoBehaviour
             GameObject ChildAtIndex = Parent.transform.GetChild(i).gameObject;
             ChildObjectsBodyParts.Add(ChildAtIndex);
         }
+    }
+
+    bool CheckIfAllBodyPartsGone()
+    {
+        foreach (GameObject bodyPart in ChildObjectsBodyParts)
+        {
+            if (bodyPart.activeSelf)
+                return false;
+        }
+
+        return true;
     }
 }
