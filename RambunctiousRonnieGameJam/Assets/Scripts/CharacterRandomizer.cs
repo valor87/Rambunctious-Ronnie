@@ -9,7 +9,7 @@ public class CharacterRandomizer : MonoBehaviour
     {
         public string limbName;
         public Limb limbType;
-        public LimbCharacter limbCharacter;
+        public BodyType limbCharacter;
         public Mesh limbSkin;
         public List<Material> limbMaterials;
     }
@@ -37,7 +37,8 @@ public class CharacterRandomizer : MonoBehaviour
         ShiftCharacterToOld();
 
         Vector3 randomPos = new Vector3(Random.Range(-0.7f, 0.7f), 1.2f, -8); //should change to a set position once game is more developed
-        CharacterValues characterObj = Instantiate(characterPrefab, randomPos, Quaternion.identity).GetComponent<CharacterValues>();
+        GameObject characterGameObject = Instantiate(characterPrefab, randomPos, Quaternion.identity);
+        CharacterValues characterObj = characterGameObject.GetComponent<CharacterValues>();
         characterObj.CharactersValues = Character.CreateInstance<Character>();
 
         characterObj.CharactersValues.Randomize(listOfAllTraits);
@@ -45,9 +46,51 @@ public class CharacterRandomizer : MonoBehaviour
         eventCore.setNewCharacterEV.Invoke(characterObj.gameObject);
 
     }
-    void SetCharacterVisuals()
+    void SetCharacterVisuals(Character characterObj, GameObject randomCharacter)
     {
-
+        for(int i = 0; i < possibleLimbs.Length; i++)
+        {
+            switch (possibleLimbs[i].limbType)
+            {
+                case (Limb.head):
+                    if (possibleLimbs[i].limbCharacter == characterObj.head)
+                    {
+                        randomCharacter.transform.Find("Head").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                    }
+                    break;
+                case (Limb.torso):
+                    if (possibleLimbs[i].limbCharacter == characterObj.torso)
+                    {
+                        randomCharacter.transform.Find("Torso").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                    }
+                    break;
+                case (Limb.leftArm):
+                    if (possibleLimbs[i].limbCharacter == characterObj.leftArm)
+                    {
+                        randomCharacter.transform.Find("LeftArm").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                    }
+                    break;
+                case (Limb.rightArm):
+                    if (possibleLimbs[i].limbCharacter == characterObj.rightArm)
+                    {
+                        randomCharacter.transform.Find("RightArm").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                    }
+                    break;
+                case (Limb.leftLeg):
+                    if (possibleLimbs[i].limbCharacter == characterObj.leftLeg)
+                    {
+                        randomCharacter.transform.Find("LeftLeg").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                    }
+                    break;
+                case (Limb.rightLeg):
+                    if (possibleLimbs[i].limbCharacter == characterObj.rightLeg)
+                    {
+                        randomCharacter.transform.Find("RightLeg").GetComponent<SkinnedMeshRenderer>().sharedMesh = possibleLimbs[i].limbSkin;
+                    }
+                    break;
+            }
+            
+        }
     }
     void ShiftCharacterToOld()
     {
