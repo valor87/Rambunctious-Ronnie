@@ -1,8 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterRandomizer : MonoBehaviour
 {
+    [System.Serializable]
+    public struct CharacterLimbs
+    {
+        public string limbName;
+        public Limb limbType;
+        public LimbCharacter limbCharacter;
+        public Mesh limbSkin;
+        public List<Material> limbMaterials;
+    }
+
+    public CharacterLimbs[] possibleLimbs;
     public GameObject characterPrefab;
     public List<Trait> listOfAllTraits;
 
@@ -10,13 +22,14 @@ public class CharacterRandomizer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+       
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
         eventCore.createNewCharacterEV.AddListener(RandomizeCharacter);
         eventCore.followApproveCharacterEV.AddListener(RandomizeCharacter);
         eventCore.denyCharacterEV.AddListener(ShiftCharacterToOld);
     }
-
+   
     //you can test out spawning through the context menu
     [ContextMenu("Spawn and Randomize Character")]
     void RandomizeCharacter()
@@ -32,7 +45,10 @@ public class CharacterRandomizer : MonoBehaviour
         eventCore.setNewCharacterEV.Invoke(characterObj.gameObject);
 
     }
+    void SetCharacterVisuals()
+    {
 
+    }
     void ShiftCharacterToOld()
     {
         GameObject characterGameObj = GameObject.Find("Character");
