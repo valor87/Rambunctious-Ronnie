@@ -30,6 +30,7 @@ public class CharacterRandomizer : MonoBehaviour
         characterObj.CharactersValues.Randomize(listOfAllTraits);
         characterObj.gameObject.name = "Character";
         eventCore.setNewCharacterEV.Invoke(characterObj.gameObject);
+
     }
 
     void ShiftCharacterToOld()
