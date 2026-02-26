@@ -3127,7 +3127,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 251362105}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.38175184
+  m_Size: 0.38175187
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4341,7 +4341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
   outcomeText: {fileID: 0}
-  fadeOutTime: 2
+  fadeOutTime: 1.5
 --- !u!1 &1148583203
 GameObject:
   m_ObjectHideFlags: 0
@@ -6434,6 +6434,7 @@ MonoBehaviour:
   questionsAsked: 0
   maxQuestions: 5
   characterInteractionManagerObj: {fileID: 0}
+  characterRandomizerObj: {fileID: 0}
   approveButtonObj: {fileID: 1148583203}
   denyButtonObj: {fileID: 2130067233}
 --- !u!4 &1779753467

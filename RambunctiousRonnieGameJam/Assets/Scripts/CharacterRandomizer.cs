@@ -32,7 +32,7 @@ public class CharacterRandomizer : MonoBehaviour
    
     //you can test out spawning through the context menu
     [ContextMenu("Spawn and Randomize Character")]
-    void RandomizeCharacter()
+    public void RandomizeCharacter()
     {
         ShiftCharacterToOld();
 
