@@ -5,14 +5,20 @@ using UnityEngine.UI;
 public class QuestionHolder : MonoBehaviour
 {
     EventCore eventCore;
-    GameManager gameManager;
     public TextMeshProUGUI textObj;
     public Question question;
+    public bool questionDisabled;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        eventCore.approveCharacterEV.AddListener(DisableQuestion);
+        eventCore.denyCharacterEV.AddListener(DisableQuestion);
+        eventCore.reachedMaxQuestionsEV.AddListener(DisableQuestion);
+
+        eventCore.createNewCharacterEV.AddListener(EnableQuestion);
+        eventCore.followApproveCharacterEV.AddListener(EnableQuestion);
         eventCore.winGameEV.AddListener(disableSelf);
         eventCore.loseGameEV.AddListener(disableSelf);
 
@@ -24,23 +30,26 @@ public class QuestionHolder : MonoBehaviour
         textObj.text = question.questionText;
     }
 
-    private void Update()
-    {
-        //hides questions if exceeded amount of questions
-        if (gameManager.questionsAsked >= gameManager.maxQuestions)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-        }
-    }
-
     public void invokeAskQuestion()
     {
         print("invoking askQuestionEV");
-        eventCore.askQuestionEV.Invoke(question);
+        if (!questionDisabled)
+        {
+            eventCore.askQuestionEV.Invoke(question);
+            DisableQuestion();
+        }
+    }
+
+    void DisableQuestion()
+    {
+        questionDisabled = true;
+        textObj.color = new Color(0.75f, 0.75f, 0.75f);
+    }
+    
+    void EnableQuestion()
+    {
+        questionDisabled = false;
+        textObj.color = Color.black;
     }
 
     void disableSelf()

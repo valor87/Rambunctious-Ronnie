@@ -19,6 +19,10 @@ public class EventCore : MonoBehaviour
     public UnityEvent<Question> askQuestionEV;
 
     [HideInInspector]
+    //event for reaching max questions asked. usually disables all the questions from being asked.
+    public UnityEvent reachedMaxQuestionsEV;
+
+    [HideInInspector]
     //event for revealing traits in the character stat menu
     public UnityEvent<Trait> revealTraitEV;
 

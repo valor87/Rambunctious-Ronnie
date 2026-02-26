@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 451081138}
   question: {fileID: 11400000, guid: 91f0ac1eef2439842b0d425889e9f5bc, type: 2}
+  questionDisabled: 0
 --- !u!114 &13291806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,7 +963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObj: {fileID: 821476582}
-  question: {fileID: 0}
+  question: {fileID: 11400000, guid: 5c3bc99bb7a22344bb616de32e661686, type: 2}
+  questionDisabled: 0
 --- !u!114 &291159071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,7 +1384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObj: {fileID: 1611307963}
-  question: {fileID: 0}
+  question: {fileID: 11400000, guid: 01e918d919853bd4389af6efbdb4e345, type: 2}
+  questionDisabled: 0
 --- !u!114 &351594430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1600,6 +1603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 2019266496}
   question: {fileID: 0}
+  questionDisabled: 0
 --- !u!114 &378987376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,7 +1751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObj: {fileID: 632896223}
-  question: {fileID: 0}
+  question: {fileID: 11400000, guid: 91f0ac1eef2439842b0d425889e9f5bc, type: 2}
+  questionDisabled: 0
 --- !u!114 &381929713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +1920,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   askQuestionEV:
+    m_PersistentCalls:
+      m_Calls: []
+  reachedMaxQuestionsEV:
     m_PersistentCalls:
       m_Calls: []
   revealTraitEV:
@@ -2170,6 +2178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 669659144}
   question: {fileID: 0}
+  questionDisabled: 0
 --- !u!114 &488452860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 1001002128}
   question: {fileID: 11400000, guid: 5c3bc99bb7a22344bb616de32e661686, type: 2}
+  questionDisabled: 0
 --- !u!114 &866529200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4179,7 +4189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
   outcomeText: {fileID: 0}
-  fadeOutTime: 3
+  fadeOutTime: 2
 --- !u!1 &1148583203
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,6 +5221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 74409787}
   question: {fileID: 11400000, guid: 01e918d919853bd4389af6efbdb4e345, type: 2}
+  questionDisabled: 0
 --- !u!1 &1462350692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5264,7 +5275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObj: {fileID: 324491088}
-  question: {fileID: 0}
+  question: {fileID: 11400000, guid: 01e918d919853bd4389af6efbdb4e345, type: 2}
+  questionDisabled: 0
 --- !u!114 &1462350695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6513,6 +6525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObj: {fileID: 587777387}
   question: {fileID: 0}
+  questionDisabled: 0
 --- !u!114 &1914933259
 MonoBehaviour:
   m_ObjectHideFlags: 0
