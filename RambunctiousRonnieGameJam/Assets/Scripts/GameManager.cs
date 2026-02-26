@@ -42,16 +42,27 @@ public class GameManager : MonoBehaviour
         }
         
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        eventCore.changeGenreEV.AddListener(ChangeGenre);
+
+        eventCore.askQuestionEV.AddListener(UseUpQuestion);
         eventCore.denyCharacterEV.AddListener(BeginSalvagePhase);
         eventCore.endSalvagePhaseEV.AddListener(EndSalvagePhase);
         eventCore.followApproveCharacterEV.AddListener(ResetCharactersAmount);
 
+        eventCore.changeGenreEV.AddListener(ChangeGenre);
         eventCore.successfulShowEV.AddListener(IncreaseScore);
         eventCore.successfulShowEV.AddListener(ChangeGenre);
         eventCore.failureShowEV.AddListener(DecreaseLives);
 
         ChangeGenre();
+    }
+
+    void UseUpQuestion(Question _unusedQuestion)
+    {
+        questionsAsked++;
+        if (questionsAsked >= maxQuestions)
+        {
+            eventCore.reachedMaxQuestionsEV.Invoke();
+        }
     }
 
     void BeginSalvagePhase()
@@ -64,11 +75,13 @@ public class GameManager : MonoBehaviour
     void EndSalvagePhase()
     {
         characterInteractionManagerObj.salvagePhase = false;
+        questionsAsked = 0;
         eventCore.createNewCharacterEV.Invoke();
     }
 
     void ResetCharactersAmount()
     {
+        questionsAsked = 0;
         charactersLeft = startingCharactersNum;
         eventCore.updateCharactersAmountEV.Invoke(charactersLeft);
     }

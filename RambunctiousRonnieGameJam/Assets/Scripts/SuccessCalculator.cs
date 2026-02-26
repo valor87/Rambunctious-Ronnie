@@ -73,8 +73,6 @@ public class SuccessCalculator : MonoBehaviour
                 Debug.LogError("Could not find the character stat menu in the canvas.");
             }
         }
-
-
     }
 
     void SetNewCharacter(GameObject newCharacterObj)
