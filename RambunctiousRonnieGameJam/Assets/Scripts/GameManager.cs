@@ -7,11 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public Genres currentShowGenre = Genres.None;
     public int lives = 3;
-    public int score = 0;
-    public int endScore = 10;
+    public int showNum = 0;
+    public int showEndNum = 10;
 
-    public int denialAmount = 0;
-    public int maxDenials = 10;
+    public int startingCharactersNum = 10;
+    public int charactersLeft;
 
     public int questionsAsked = 0;
     public int maxQuestions = 5;
@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        charactersLeft = startingCharactersNum;
+        
         if (characterInteractionManagerObj == null)
         {
             characterInteractionManagerObj = GameObject.Find("CharacterInteractionManager").GetComponent<SelectingLimb>();
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         eventCore.changeGenreEV.AddListener(ChangeGenre);
         eventCore.denyCharacterEV.AddListener(BeginSalvagePhase);
         eventCore.endSalvagePhaseEV.AddListener(EndSalvagePhase);
+        eventCore.approveCharacterEV.AddListener(ResetCharactersAmount);
 
         eventCore.successfulShowEV.AddListener(IncreaseScore);
         eventCore.successfulShowEV.AddListener(ChangeGenre);
@@ -53,7 +56,8 @@ public class GameManager : MonoBehaviour
 
     void BeginSalvagePhase()
     {
-        denialAmount++;
+        charactersLeft--;
+        eventCore.updateCharactersAmountEV.Invoke(charactersLeft);
         characterInteractionManagerObj.salvagePhase = true;
     }
 
@@ -61,6 +65,12 @@ public class GameManager : MonoBehaviour
     {
         characterInteractionManagerObj.salvagePhase = false;
         eventCore.createNewCharacterEV.Invoke();
+    }
+
+    void ResetCharactersAmount()
+    {
+        charactersLeft = startingCharactersNum;
+        eventCore.updateCharactersAmountEV.Invoke(charactersLeft);
     }
 
     void ChangeGenre()
@@ -80,8 +90,9 @@ public class GameManager : MonoBehaviour
 
     void IncreaseScore()
     {
-        score++;
-        if (score >= endScore)
+        showNum++;
+        eventCore.updateShowNumEV.Invoke(showNum);
+        if (showNum >= showEndNum)
         {
             eventCore.winGameEV.Invoke();
             print("YOU WIN!!!!!");
@@ -91,6 +102,8 @@ public class GameManager : MonoBehaviour
     void DecreaseLives()
     {
         lives--;
+        eventCore.updateLivesAmountEV.Invoke(lives);
+
         if (lives <= 0)
         {
             eventCore.loseGameEV.Invoke();

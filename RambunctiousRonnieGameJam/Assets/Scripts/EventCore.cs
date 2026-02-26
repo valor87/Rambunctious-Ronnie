@@ -38,6 +38,18 @@ public class EventCore : MonoBehaviour
     //event for updating the success chance in the character stat menu. follows calculateSuccessChanceEV
     public UnityEvent<float> updateSuccessChanceEV;
 
+    [HideInInspector]
+    //event for updating the lives in the character stat menu
+    public UnityEvent<int> updateLivesAmountEV;
+
+    [HideInInspector]
+    //event for updating the character amount in the character stat menu
+    public UnityEvent<int> updateCharactersAmountEV;
+
+    [HideInInspector]
+    //event for updating the show number in the character stat menu
+    public UnityEvent<int> updateShowNumEV;
+
     //events for approving or denying a character. either checks if show succeeds through chance or begins the salvaging phase
     [HideInInspector]
     public UnityEvent approveCharacterEV;
@@ -81,7 +93,7 @@ public class EventCore : MonoBehaviour
     public void DenyCharacterInvokeEV()
     {
         GameObject oldCharacter = GameObject.Find("OldCharacter");
-        if (oldCharacter == null && gameManager.denialAmount < gameManager.maxDenials)
+        if (oldCharacter == null && gameManager.charactersLeft > 0)
         {
             print("deny character invoked");
             denyCharacterEV.Invoke();

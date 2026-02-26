@@ -7,7 +7,10 @@ public class CharacterStatMenu : MonoBehaviour
     GameObject panelObj; 
     public TextMeshProUGUI[] traitTexts = new TextMeshProUGUI[3];
     public TextMeshProUGUI successChance;
+    public TextMeshProUGUI showNum;
     public TextMeshProUGUI genreTitle;
+    public TextMeshProUGUI livesAmount;
+    public TextMeshProUGUI charactersAmount;
 
     EventCore eventCore; 
 
@@ -19,9 +22,10 @@ public class CharacterStatMenu : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
         eventCore.revealTraitEV.AddListener(RevealTrait);
         eventCore.updateSuccessChanceEV.AddListener(UpdateSuccessChance);
+        eventCore.updateShowNumEV.AddListener(UpdateShowNum);
         eventCore.updateGenreEV.AddListener(UpdateGenreTitle);
-
-        //Invoke(nameof(SetReferences), 1f);
+        eventCore.updateLivesAmountEV.AddListener(UpdateLivesAmount);
+        eventCore.updateCharactersAmountEV.AddListener(UpdateCharactersAmount);
     }
 
     void SetReferences()
@@ -49,6 +53,14 @@ public class CharacterStatMenu : MonoBehaviour
                 Debug.LogError("Could not find success chance text in character stats menu.");
         }
 
+        if (showNum == null)
+        {
+            showNum = panelObj.transform.Find("ShowNum").GetComponent<TextMeshProUGUI>();
+
+            if (showNum == null)
+                Debug.LogError("Could not find show num text in character stats menu.");
+        }
+
         if (genreTitle == null)
         {
             genreTitle = panelObj.transform.Find("GenreTitle").GetComponent<TextMeshProUGUI>();
@@ -56,6 +68,27 @@ public class CharacterStatMenu : MonoBehaviour
             if (genreTitle == null)
                 Debug.LogError("Could not find genre title text in character stats menu.");
         }
+
+        if (livesAmount == null)
+        {
+            livesAmount = panelObj.transform.Find("LivesAmount").GetComponent<TextMeshProUGUI>();
+
+            if (livesAmount == null)
+                Debug.LogError("Could not find lives amount text in character stats menu.");
+        }
+
+        if (charactersAmount == null)
+        {
+            charactersAmount = panelObj.transform.Find("CharactersAmount").GetComponent<TextMeshProUGUI>();
+
+            if (charactersAmount == null)
+                Debug.LogError("Could not find characters amount text in character stats menu.");
+        }
+    }
+
+    void UpdateShowNum(int showNumber)
+    {
+        showNum.text = $"Show: {showNumber + 1}";
     }
 
     void UpdateGenreTitle(string tempGenreTitle)
@@ -73,6 +106,16 @@ public class CharacterStatMenu : MonoBehaviour
         {
             successChance.text = $"Chance of success: {displayedChance}%";
         }
+    }
+
+    void UpdateLivesAmount(int lives)
+    {
+        livesAmount.text = $"Lives: {lives}";
+    }
+
+    void UpdateCharactersAmount(int charactersLeft)
+    {
+        charactersAmount.text = $"Characters: {charactersLeft}";
     }
 
     void RevealTrait(Trait selectedTrait)
