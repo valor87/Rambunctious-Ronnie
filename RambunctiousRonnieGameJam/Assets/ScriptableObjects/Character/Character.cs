@@ -2,17 +2,19 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
+public enum BodyType
+{
+    None = 0,
+    Spiky = 1,
+    Thin = 2,
+    Buff = 3,
+    Curvy = 4
+}
 [CreateAssetMenu(fileName = "Character", menuName = "Scriptable Objects/Character")]
+
 public class Character : ScriptableObject
 {
-    public enum BodyType
-    {
-        None = 0,
-        Spiky = 1,
-        Thin = 2,
-        Buff = 3,
-        Curvy = 4
-    }
+  
 
     [Header("Body")]
     public BodyType head;
