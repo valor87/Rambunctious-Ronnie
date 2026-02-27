@@ -3132,7 +3132,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 251362105}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.38175187
+  m_Size: 0.38175184
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4883,6 +4883,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: RemovedLimbManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4716446415376275211, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716446415376275211, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716446415376275211, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028129396266177591, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028129396266177591, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028129396266177591, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1
@@ -4922,6 +4946,18 @@ PrefabInstance:
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209333532031649647, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209333532031649647, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209333532031649647, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

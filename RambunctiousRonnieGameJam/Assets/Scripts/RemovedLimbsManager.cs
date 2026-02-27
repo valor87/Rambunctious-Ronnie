@@ -20,6 +20,9 @@ public class RemovedLimbsManager : MonoBehaviour
         Vector3 pos = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
         // create the limb for the player to move around
         GameObject StoredLimb = Instantiate(Instantiate, pos, Quaternion.identity);
+        StoredLimb.GetComponent<MeshFilter>().mesh = Limb.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        StoredLimb.GetComponent<MeshRenderer>().materials = Limb.GetComponent<SkinnedMeshRenderer>().materials;
+        StoredLimb.transform.eulerAngles = new Vector3(-90, 0, 0);
         StoredLimb.tag = Limb.tag;
         // set the limb type and limb enum to the one that the player removed
         StoredLimb.GetComponent<LimbClassification>().Limb = Limb.GetComponent<LimbClassification>().Limb;
