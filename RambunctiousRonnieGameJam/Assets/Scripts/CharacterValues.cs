@@ -14,6 +14,7 @@ public class CharacterValues : MonoBehaviour
     public GameObject parentOfLimbs;
     public float moveSpeed = 2f;
     public float deleteTimer = 2f;
+    public float cutoffMagnitude = 0.1f;
     EventCore eventCore; 
     string type;
     private void Start()
@@ -136,5 +137,32 @@ public class CharacterValues : MonoBehaviour
         Destroy(gameObject);
         yield return null;
         
+    }
+
+    //activated directly by character randomizer at time of spawn
+    public void MoveOnScreen(Vector3 endPos)
+    {
+        characterHitboxes = transform.Find("CharacterHitBoxes").gameObject; // band-aid solution
+        characterHitboxes.SetActive(false);
+        StartCoroutine(MovingOnScreen(endPos));
+    }
+
+    IEnumerator MovingOnScreen(Vector3 endPos)
+    {
+        print("moving on screen");
+        
+        Vector3 newPos = transform.position;
+        float distanceMagnitude = (endPos - transform.position).magnitude;
+        while (distanceMagnitude > cutoffMagnitude)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, endPos, moveSpeed * Time.deltaTime);
+            distanceMagnitude = (endPos - transform.position).magnitude;
+            yield return Time.deltaTime;
+        }
+
+        transform.position = endPos;
+        characterHitboxes.SetActive(true);
+        yield return null;
+
     }
 }

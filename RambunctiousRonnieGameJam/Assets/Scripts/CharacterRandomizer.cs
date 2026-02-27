@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CharacterRandomizer : MonoBehaviour
 {
     [System.Serializable]
@@ -14,14 +13,41 @@ public class CharacterRandomizer : MonoBehaviour
         public Material[] limbMaterials;
     }
 
-    public CharacterLimbs[] possibleLimbs;
+    [Header("Character Data")]
     public GameObject characterPrefab;
+    public CharacterLimbs[] possibleLimbs;
     public List<Trait> listOfAllTraits;
+
+    [Header("Character Position")]
+    public GameObject spawnPoint;
+    public GameObject mainPoint;
+
+    [Header("Miscellanous")]
+    [Tooltip("For some reason, the character might be facing the other way. Set this to true to flip them around.")]
+    public bool flipRotation;
 
     EventCore eventCore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (spawnPoint == null)
+        {
+            spawnPoint = transform.Find("SpawnPoint").gameObject;
+            if (spawnPoint == null)
+            {
+                Debug.LogError("Could not find the spawn point as a child.");
+            }
+        }
+
+        if (mainPoint == null)
+        {
+            mainPoint = transform.Find("MainPoint").gameObject;
+            if (mainPoint == null)
+            {
+                Debug.LogError("Could not find the main point as a child.");
+            }
+        }
+
 
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
@@ -36,13 +62,18 @@ public class CharacterRandomizer : MonoBehaviour
     {
         ShiftCharacterToOld();
 
-        Vector3 randomPos = new Vector3(Random.Range(-0.7f, 0.7f), 1.2f, -8); //should change to a set position once game is more developed
-        GameObject characterGameObject = Instantiate(characterPrefab, randomPos, Quaternion.identity);
+        Vector3 newPos = spawnPoint.transform.position;
+        GameObject characterGameObject = Instantiate(characterPrefab, newPos, Quaternion.identity);
         CharacterValues characterObj = characterGameObject.GetComponent<CharacterValues>();
         characterObj.CharactersValues = Character.CreateInstance<Character>();
 
         characterObj.CharactersValues.Randomize(listOfAllTraits);
         characterObj.gameObject.name = "Character";
+        characterObj.MoveOnScreen(mainPoint.transform.position);
+        if (flipRotation)
+        {
+            characterObj.transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
 
         SetCharacterVisuals(characterObj.CharactersValues, characterGameObject.transform.Find("SpikyFullyRigged").gameObject);
         eventCore.setNewCharacterEV.Invoke(characterGameObject);
