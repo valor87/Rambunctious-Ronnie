@@ -17,6 +17,8 @@ public class SelectingLimb : MonoBehaviour
     //[HideInInspector]
     public bool salvagePhase = false;
 
+    bool removingALimb;
+
     // Update is called once per frame
     void Update()
     {
@@ -46,10 +48,11 @@ public class SelectingLimb : MonoBehaviour
                 LimbClass.Hover = true;
 
             // the player removes a limb from the body of the character
-            if (Input.GetMouseButtonDown(0) && salvagePhase)
+            if (Input.GetMouseButtonDown(0) && salvagePhase && !removingALimb)
             {
                 if (hit.collider.gameObject.layer == 6)
                 {
+                    removingALimb = true;
                     RemoveLimbInteraction(hit.collider.gameObject);
                 }
 
@@ -86,5 +89,6 @@ public class SelectingLimb : MonoBehaviour
         yield return new WaitForSeconds(1);
         LC.gameObject.SetActive(false);
         RemovedLimbs.SeveredLimb(LC);
+        removingALimb = false;
     }
 }

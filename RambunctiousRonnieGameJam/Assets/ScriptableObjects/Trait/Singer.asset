@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7d4a27d985c064aa71c6866b94fe0d, type: 3}
   m_Name: Singer
   m_EditorClassIdentifier: 
-  traitName: 
+  traitName: Singer
   positiveGenres: 0100000009000000
   negativeGenres: 06000000080000000c000000

@@ -3189,15 +3189,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.67
+      value: 1.158
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.91
+      value: 1.644
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.03
+      value: -8.567
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3470,7 +3470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4053,7 +4053,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023267058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4909,7 +4909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -0.572
       objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4917,7 +4917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: -8.635
       objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6984,7 +6984,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935578228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
