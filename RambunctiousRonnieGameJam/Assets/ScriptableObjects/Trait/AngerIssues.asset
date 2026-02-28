@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7d4a27d985c064aa71c6866b94fe0d, type: 3}
   m_Name: AngerIssues
   m_EditorClassIdentifier: 
-  traitName: AngerIssues
+  traitName: Anger Issues
   positiveGenres: 040000000c000000
   negativeGenres: 07000000

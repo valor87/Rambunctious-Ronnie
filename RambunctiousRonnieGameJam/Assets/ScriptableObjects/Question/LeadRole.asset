@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: LeadRole
+  m_EditorClassIdentifier: 
+  questionText: How would you fare if you were the main role? Main source of attention?
+  traitsRevealed:
+  - {fileID: 11400000, guid: a5e031b4b8ad96643858c00f5b5b1358, type: 2}
+  - {fileID: 11400000, guid: 4feb4edd41012224b88c5182159e2aa9, type: 2}
+  - {fileID: 11400000, guid: 0a6c1ab90feb8be408dcb30f169ac47a, type: 2}
+  defaultReply: The main source? Well, I think I'd do alright.
+  replyKey:
+  - {fileID: 11400000, guid: a5e031b4b8ad96643858c00f5b5b1358, type: 2}
+  - {fileID: 11400000, guid: 4feb4edd41012224b88c5182159e2aa9, type: 2}
+  - {fileID: 11400000, guid: 0a6c1ab90feb8be408dcb30f169ac47a, type: 2}
+  - {fileID: 11400000, guid: 0fd171517e1147a4398fc997692f8f0e, type: 2}
+  - {fileID: 11400000, guid: 138db3ffc7861704d8012aa6e86b9a09, type: 2}
+  - {fileID: 11400000, guid: 65b960290032cc048a02be92fc50ee7c, type: 2}
+  replyText:
+  - Ah yes, that would be perfect for me! I couldn't think of anything else better
+    suiting.
+  - As long as it's romance, I will gladly be the protagonist!
+  - If I could sing, of course! Singers are usually the main focus if they are included
+    anyways.
+  - Main role, side role, whatever. But my skills would greatly suffice.
+  - That means I'm allowed to talk a lot, right? Then of course!
+  - Of course... for someone as brooding like me, that is the only fitting role...

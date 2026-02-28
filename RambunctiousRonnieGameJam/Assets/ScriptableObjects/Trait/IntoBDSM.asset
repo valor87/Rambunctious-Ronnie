@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: IntoBDSM
   m_EditorClassIdentifier: 
   traitName: Into BDSM
-  positiveGenres: 050000000600000007000000
+  positiveGenres: 05000000040000000600000007000000
   negativeGenres: 0200000009000000

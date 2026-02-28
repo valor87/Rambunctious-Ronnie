@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
-  m_Name: TestQuestion3
+  m_Name: zzzTestQuestion2
   m_EditorClassIdentifier: 
-  questionIdentifier: 
-  questionText: Test question. Can you hold in your laugh?
+  questionText: Test question. Are you dumb?
   traitsRevealed:
-  - {fileID: 11400000, guid: 84d65722b2fe86d4f93aa6b5796ad880, type: 2}
-  defaultReply: duh who you think i am
+  - {fileID: 11400000, guid: 7b0ea0d6c1a95d04bb39fe2a78ec4d74, type: 2}
+  defaultReply: Are you insulting me? bitch
   replyKey:
-  - {fileID: 11400000, guid: 84d65722b2fe86d4f93aa6b5796ad880, type: 2}
+  - {fileID: 11400000, guid: 7b0ea0d6c1a95d04bb39fe2a78ec4d74, type: 2}
   replyText:
-  - nuh uh BAHAHAHAHAHAHA
+  - yes. durrrrrrr

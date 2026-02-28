@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: Slipup
+  m_EditorClassIdentifier: 
+  questionText: Say a slipup or a mistake happens on scene while we're shooting.
+    How will you react?
+  traitsRevealed:
+  - {fileID: 11400000, guid: 8c6e1d8a00f4b6f48b27a51cccd85dde, type: 2}
+  - {fileID: 11400000, guid: e32f82a8049dce847a95d691a3f9b90f, type: 2}
+  - {fileID: 11400000, guid: 662bceae056a0684fab5068a6dea6e1c, type: 2}
+  defaultReply: Well, honestly, I'd have to stop and we'd have to restart the scene.
+  replyKey:
+  - {fileID: 11400000, guid: 8c6e1d8a00f4b6f48b27a51cccd85dde, type: 2}
+  - {fileID: 11400000, guid: e32f82a8049dce847a95d691a3f9b90f, type: 2}
+  - {fileID: 11400000, guid: 662bceae056a0684fab5068a6dea6e1c, type: 2}
+  - {fileID: 11400000, guid: dfa441996a5f7f54398da0de2558ff37, type: 2}
+  - {fileID: 11400000, guid: c0fd7b2700683214b885b176ece1c144, type: 2}
+  - {fileID: 11400000, guid: 13e2e1621147f9040bc80873b3bb4c0e, type: 2}
+  replyText:
+  - I'd try to keep it going. I'm used to these situations and honestly, it sometimes
+    leads to better scenes.
+  - I'd do my best to ignore it and keep going. A single misstep isn't so bad.
+  - I actually don't know what I would do, but I know it would be my fault so apologies
+    in advance.
+  - Well, I'd go reapply deoderant since I probably got sweaty from shooting.
+  - I don't know... start crying, maybe?
+  - I have a feeling that would be my fault. I'd probably be messing up my lines
+    so much.

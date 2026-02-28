@@ -19,6 +19,7 @@ public class QuestionProcessor : MonoBehaviour
     void SetNewCharacter(GameObject newCharacterObj)
     {
         print("received new character");
+        textbox.text = "";
         characterObj = newCharacterObj;
         foreach (TextMeshProUGUI textObj in traitTexts)
         {

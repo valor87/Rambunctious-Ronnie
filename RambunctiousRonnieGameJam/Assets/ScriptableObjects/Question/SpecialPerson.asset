@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: SpecialPerson
+  m_EditorClassIdentifier: 
+  questionText: You're pretty... special, huh? Different from other people?
+  traitsRevealed:
+  - {fileID: 11400000, guid: 65b960290032cc048a02be92fc50ee7c, type: 2}
+  - {fileID: 11400000, guid: 138db3ffc7861704d8012aa6e86b9a09, type: 2}
+  - {fileID: 11400000, guid: dfa441996a5f7f54398da0de2558ff37, type: 2}
+  defaultReply: Well, all of us our different in our own ways.
+  replyKey:
+  - {fileID: 11400000, guid: 65b960290032cc048a02be92fc50ee7c, type: 2}
+  - {fileID: 11400000, guid: 138db3ffc7861704d8012aa6e86b9a09, type: 2}
+  - {fileID: 11400000, guid: dfa441996a5f7f54398da0de2558ff37, type: 2}
+  - {fileID: 11400000, guid: 098e1c4a655ee734f8a6bffc6cf738ce, type: 2}
+  - {fileID: 11400000, guid: 0fd171517e1147a4398fc997692f8f0e, type: 2}
+  - {fileID: 11400000, guid: a5e031b4b8ad96643858c00f5b5b1358, type: 2}
+  replyText:
+  - Oh, so you can see that, huh...? You can see the darkness within me?
+  - What, is it because I talk a lot? My bad, my bad, but I can't really control
+    it! I mean, I can't really explain what I mean in so little words. Every word
+    I say is mandatory!
+  - Oh, so you're saying I smell, huh? Everyone keeps saying that, but I took my
+    deoderant! So you're wrong.
+  - I mean yeah, I got some very different interests than your average person...
+  - What? You talking about my acting style?
+  - I mean, if you're talking about my outgoingness, sure.
