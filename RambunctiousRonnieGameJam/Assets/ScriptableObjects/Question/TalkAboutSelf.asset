@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: TalkAboutSelf
+  m_EditorClassIdentifier: 
+  questionText: Tell me anything about yourself.
+  traitsRevealed: []
+  defaultReply: You shouldn't see this.
+  replyKey:
+  - {fileID: 11400000, guid: 10cd6cfa10c047e48accda1f214da0b5, type: 2}
+  - {fileID: 11400000, guid: 7b0ea0d6c1a95d04bb39fe2a78ec4d74, type: 2}
+  - {fileID: 11400000, guid: 84d65722b2fe86d4f93aa6b5796ad880, type: 2}
+  - {fileID: 11400000, guid: 13e2e1621147f9040bc80873b3bb4c0e, type: 2}
+  - {fileID: 11400000, guid: a65d703a890b4d34996416f866adc08a, type: 2}
+  - {fileID: 11400000, guid: 662bceae056a0684fab5068a6dea6e1c, type: 2}
+  - {fileID: 11400000, guid: 8a16e14fa774a3c4b97b0fc4df6367d2, type: 2}
+  - {fileID: 11400000, guid: a5e031b4b8ad96643858c00f5b5b1358, type: 2}
+  - {fileID: 11400000, guid: c0fd7b2700683214b885b176ece1c144, type: 2}
+  - {fileID: 11400000, guid: e32f82a8049dce847a95d691a3f9b90f, type: 2}
+  - {fileID: 11400000, guid: 4feb4edd41012224b88c5182159e2aa9, type: 2}
+  - {fileID: 11400000, guid: dfa441996a5f7f54398da0de2558ff37, type: 2}
+  - {fileID: 11400000, guid: 8c6e1d8a00f4b6f48b27a51cccd85dde, type: 2}
+  - {fileID: 11400000, guid: 098e1c4a655ee734f8a6bffc6cf738ce, type: 2}
+  - {fileID: 11400000, guid: 65b960290032cc048a02be92fc50ee7c, type: 2}
+  - {fileID: 11400000, guid: 1946c4997b398f940865a771d4a89a28, type: 2}
+  - {fileID: 11400000, guid: 0fd171517e1147a4398fc997692f8f0e, type: 2}
+  - {fileID: 11400000, guid: 240bf358d50769e43bb6320acc632dd6, type: 2}
+  - {fileID: 11400000, guid: 3c0d1e9a140a31644b521b125d67f714, type: 2}
+  - {fileID: 11400000, guid: 0a6c1ab90feb8be408dcb30f169ac47a, type: 2}
+  - {fileID: 11400000, guid: 1d23902d8b58405498aaf96390a14e50, type: 2}
+  - {fileID: 11400000, guid: 9bc829c5d7d041f4d9d2dd9bd3511762, type: 2}
+  - {fileID: 11400000, guid: 138db3ffc7861704d8012aa6e86b9a09, type: 2}
+  replyText:
+  - Talk about myself? Fuck kinda question is that?
+  - Ummmm, uhhhhhh...
+  - Well, I love jokes! And puns. In fact, I got this *snick* funny in mind...
+  - Umm, I guess my friends describe me as a forgetful person?
+  - Myself? Like, what about myself should I talk about?
+  - Oh, people like to make fun of me for tripping over my toes.
+  - hmmm... i get called pessimistic, but i'm just facing reality unlike everyone
+    else.
+  - Oh well, my friends like to descrive me as the life of the party!
+  - Oh, I really like tragic stories. They always bring tears to my eyes.
+  - Oh, easy. I think I might have a sixth sense, with how in tune I am with everything
+    around me.
+  - Well, I guess I could say I'm a very romantic person. I've been searching for
+    my soulmate for quite some time now.
+  - Hmmm.. ohh! I love deodorant. Keeps me smelling good without having to take showers,
+    which is hella annoying.
+  - That's easy. I'm a very adaptable person. No matter the situation, I usually
+    find a way out.
+  - Oh, anything? So I could talk about fetishes? Not that I have any, of course.
+  - Anything, huh... you can't comprehend the depths of my dark mind...
+  - Hmm... I have really good pain tolerance. Like, really good.
+  - Well, I want to give a good performance, so I really try to get into my role,
+    become them.
+  - Uh, people say I overreact a lot, but they're just simpleminded bores.
+  - Wow, what a wonderful question! That'll help you learn about someone, for sure.
+  - Oh, well, I love singing!
+  - Myself? I guess I'm just a very...chill guy. I'm just nonchalant like that.
+  - Myself, hm. I guess I could be very stern. Sometimes turns people off from me.
+  - ANYTHING about myself? Let me just say, I would have went on and on, but I'll
+    spare you the spiel. For now.

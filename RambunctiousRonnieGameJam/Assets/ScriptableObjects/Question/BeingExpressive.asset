@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: BeingExpressive
+  m_EditorClassIdentifier: 
+  questionText: You're quite good at being expressive, are you?
+  traitsRevealed:
+  - {fileID: 11400000, guid: 0fd171517e1147a4398fc997692f8f0e, type: 2}
+  - {fileID: 11400000, guid: 240bf358d50769e43bb6320acc632dd6, type: 2}
+  - {fileID: 11400000, guid: c0fd7b2700683214b885b176ece1c144, type: 2}
+  defaultReply: Uh, maybe? I actually think I'm pretty average.
+  replyKey:
+  - {fileID: 11400000, guid: 0fd171517e1147a4398fc997692f8f0e, type: 2}
+  - {fileID: 11400000, guid: 240bf358d50769e43bb6320acc632dd6, type: 2}
+  - {fileID: 11400000, guid: c0fd7b2700683214b885b176ece1c144, type: 2}
+  - {fileID: 11400000, guid: 8c6e1d8a00f4b6f48b27a51cccd85dde, type: 2}
+  - {fileID: 11400000, guid: 9bc829c5d7d041f4d9d2dd9bd3511762, type: 2}
+  - {fileID: 11400000, guid: 10cd6cfa10c047e48accda1f214da0b5, type: 2}
+  replyText:
+  - I would hope so. Otherwise, my method acting isn't working.
+  - Yes, yes, I am. You going to shame me for being dramatic as well?
+  - Oh, I wouldn't say that. I'm just good at crying, that's all.
+  - Well, I try to fit whatever needs to be done at the moment.
+  - ...Is that a joke?
+  - Well, if by expressive you mean anger, I guess so.

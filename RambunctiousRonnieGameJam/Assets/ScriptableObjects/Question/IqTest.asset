@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: IqTest
+  m_EditorClassIdentifier: 
+  questionText: What is your Intelligent Quotient, also known as IQ?
+  traitsRevealed:
+  - {fileID: 11400000, guid: 7b0ea0d6c1a95d04bb39fe2a78ec4d74, type: 2}
+  - {fileID: 11400000, guid: a65d703a890b4d34996416f866adc08a, type: 2}
+  - {fileID: 11400000, guid: 13e2e1621147f9040bc80873b3bb4c0e, type: 2}
+  defaultReply: My IQ? I'm not sure.
+  replyKey:
+  - {fileID: 11400000, guid: 7b0ea0d6c1a95d04bb39fe2a78ec4d74, type: 2}
+  - {fileID: 11400000, guid: a65d703a890b4d34996416f866adc08a, type: 2}
+  - {fileID: 11400000, guid: 13e2e1621147f9040bc80873b3bb4c0e, type: 2}
+  - {fileID: 11400000, guid: e32f82a8049dce847a95d691a3f9b90f, type: 2}
+  - {fileID: 11400000, guid: 8c6e1d8a00f4b6f48b27a51cccd85dde, type: 2}
+  - {fileID: 11400000, guid: 7b0ea0d6c1a95d04bb39fe2a78ec4d74, type: 2}
+  replyText:
+  - Oh, I have a good IQ! 70 out of 100!
+  - Oh, I think I was around 85? So borderline average?
+  - Oh, I have an average IQ. I just struggle memorizing things.
+  - Oh, I'm pretty sure mine was fairly high.
+  - 'I didn''t take one, but I think I''m a bit above average since I am pretty adaptable. '
+  - I'm slightly above average.

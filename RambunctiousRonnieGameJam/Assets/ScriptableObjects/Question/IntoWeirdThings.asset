@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644da355aa0fa14983545f2d60c0c31, type: 3}
+  m_Name: IntoWeirdThings
+  m_EditorClassIdentifier: 
+  questionText: You're into some weird things, aren't you?
+  traitsRevealed:
+  - {fileID: 11400000, guid: 098e1c4a655ee734f8a6bffc6cf738ce, type: 2}
+  - {fileID: 11400000, guid: 1946c4997b398f940865a771d4a89a28, type: 2}
+  defaultReply: Uhh, what the hell are you talking about?
+  replyKey:
+  - {fileID: 11400000, guid: 098e1c4a655ee734f8a6bffc6cf738ce, type: 2}
+  - {fileID: 11400000, guid: 1946c4997b398f940865a771d4a89a28, type: 2}
+  - {fileID: 11400000, guid: 4feb4edd41012224b88c5182159e2aa9, type: 2}
+  - {fileID: 11400000, guid: 0a6c1ab90feb8be408dcb30f169ac47a, type: 2}
+  - {fileID: 11400000, guid: 84d65722b2fe86d4f93aa6b5796ad880, type: 2}
+  replyText:
+  - Oh, was I that obvious?
+  - Okay, okay. But can't a fella enjoy some abuse?
+  - None of the sort! My desires are true and pure love!
+  - Are you talking about singing? How is singing weird!?
+  - I mean, I guess my humor is a bit all over the place...
