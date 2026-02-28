@@ -12,6 +12,7 @@ public class CollisionBox : MonoBehaviour
     public bool isTrash = false;
     RemovedLimbsManager RemovableLimbManager;
 
+    
     private void Start()
     {
         RemovableLimbManager = GameObject.Find("RemovedLimbManager").GetComponent<RemovedLimbsManager>();
@@ -26,6 +27,10 @@ public class CollisionBox : MonoBehaviour
             print($"Found an object with a {tagLookingFor}");
             LimbClassification limbData = limb.GetComponent<LimbClassification>();
             limbData.LimbType = other.gameObject.GetComponent<LimbClassification>().LimbType;
+
+            // swap the mesh
+            other.gameObject.GetComponent<SkinnedMeshRenderer>().sharedMesh = GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            other.gameObject.GetComponent<SkinnedMeshRenderer>().materials = GetComponent<SkinnedMeshRenderer>().materials;
 
             GetRidOfLimb(other.gameObject);
             limb.SetActive(true); //might be pointless later since swapping body parts only work when character has all of their body parts
