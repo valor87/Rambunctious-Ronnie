@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861d9c0cd6657a6408ded5eba3c716a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 1045552289236604892, guid: 468042d3578627041915236f660448ae, type: 3}
+  characterPrefab: {fileID: 1531806047726215509, guid: c5c975a582a562a4e8c60b23963279ae, type: 3}
   possibleLimbs:
   - limbName: SpikyHead
     limbType: 1

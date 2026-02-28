@@ -29,9 +29,9 @@ public class CollisionBox : MonoBehaviour
             limbData.LimbType = other.gameObject.GetComponent<LimbClassification>().LimbType;
 
             // swap the mesh
-            other.gameObject.GetComponent<SkinnedMeshRenderer>().sharedMesh = GetComponent<SkinnedMeshRenderer>().sharedMesh;
-            other.gameObject.GetComponent<SkinnedMeshRenderer>().materials = GetComponent<SkinnedMeshRenderer>().materials;
-
+            limb.GetComponent<SkinnedMeshRenderer>().sharedMesh = other.gameObject.GetComponent<MeshFilter>().mesh;
+            limb.GetComponent<SkinnedMeshRenderer>().materials = other.gameObject.GetComponent<MeshRenderer>().materials;
+            Debug.LogError("Set the mesh");
             GetRidOfLimb(other.gameObject);
             limb.SetActive(true); //might be pointless later since swapping body parts only work when character has all of their body parts
             limb.GetComponent<LimbClassification>().Hover = false;
