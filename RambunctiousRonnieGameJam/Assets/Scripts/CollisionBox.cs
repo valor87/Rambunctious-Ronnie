@@ -1,6 +1,3 @@
-using System.Globalization;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class CollisionBox : MonoBehaviour
