@@ -8959,7 +8959,7 @@ MonoBehaviour:
   currentShowGenre: 0
   lives: 3
   showNum: 0
-  showEndNum: 10
+  showEndNum: 5
   startingCharactersNum: 10
   charactersLeft: 0
   questionsAsked: 0

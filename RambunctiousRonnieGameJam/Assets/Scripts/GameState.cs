@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class GameState : MonoBehaviour
             SetText("You Lose");
         }
         yield return new WaitForSeconds(1.5f);
-        Application.Quit();
+        SceneManager.LoadScene("TitleScreen");
     }
     void SetText(string TstateText)
     {
