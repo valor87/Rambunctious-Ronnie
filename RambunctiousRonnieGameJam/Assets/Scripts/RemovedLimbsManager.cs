@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Mono.Cecil.Cil;
 using UnityEngine;
+using static LimbClassification;
 
 public class RemovedLimbsManager : MonoBehaviour
 {
@@ -27,5 +29,82 @@ public class RemovedLimbsManager : MonoBehaviour
         // set the limb type and limb enum to the one that the player removed
         StoredLimb.GetComponent<LimbClassification>().Limb = Limb.GetComponent<LimbClassification>().Limb;
         StoredLimb.GetComponent<LimbClassification>().LimbType = Limb.GetComponent<LimbClassification>().LimbType;
+
+        BandAidFix(StoredLimb);
+    }
+
+    //hardcoded size and rotation fix for specific limbs
+    void BandAidFix(GameObject limb)
+    {
+        LimbClassification limbStats = limb.GetComponent<LimbClassification>();
+
+        //heads
+        if (limbStats.Limb == global::Limb.head)
+        {
+            //for the thin head (blue head)
+            if (limbStats.LimbType == LimbCharacter.Thin)
+            {
+                limb.transform.localScale = new Vector3(1.33f, 1.33f, 1.33f);
+            }
+        }
+
+        //torso
+        if (limbStats.Limb == Limb.torso)
+        {
+            limb.transform.localEulerAngles = new Vector3(-90, -90, 0);
+
+            if (limbStats.LimbType == LimbCharacter.Thin)
+            {
+                limb.transform.localScale = new Vector3(4.5f, 9f, 4.5f);
+            }
+        }
+
+        //arms
+        if (limbStats.Limb == Limb.rightArm || limbStats.Limb == Limb.leftArm)
+        {
+            if (limbStats.LimbType == LimbCharacter.Thin)
+            {
+                limb.transform.localScale = new Vector3(1.33f, 1.33f, 1.33f);
+                limb.transform.localEulerAngles = new Vector3(0, 0, 75);
+            }
+
+            if (limbStats.LimbType == LimbCharacter.Spiky)
+            {
+                limb.transform.localScale = new Vector3(4f, 4f, 4f);
+            }
+
+            if (limbStats.LimbType == LimbCharacter.Buff)
+            {
+                limb.transform.localEulerAngles = new Vector3(0, 0, 0);
+            }
+
+            if (limbStats.LimbType == LimbCharacter.Curvy)
+            {
+                limb.transform.localScale = new Vector3(9.5f, 9.5f, 9.5f);
+            }
+        }
+
+        //legs
+        if (limbStats.Limb == Limb.leftLeg || limbStats.Limb == Limb.rightLeg)
+        {
+            //for the thin leg
+            if (limbStats.LimbType == LimbCharacter.Thin)
+            {
+                limb.transform.localScale = new Vector3(25f, 25f, 25f);
+                limb.transform.localEulerAngles = new Vector3(0, -270, 90);
+            }
+
+            //for the spiky leg
+            if (limbStats.LimbType == LimbCharacter.Spiky)
+            {
+                limb.transform.localScale = new Vector3(5.34f, 5.34f, 5.34f);
+            }
+
+            //for the buff leg
+            if (limbStats.LimbType == LimbCharacter.Buff)
+            {
+                limb.transform.localScale = new Vector3(6f, 6f, 6f);
+            }
+        }
     }
 }
