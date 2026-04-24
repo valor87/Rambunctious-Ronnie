@@ -22,10 +22,12 @@ public class RemovedLimbsManager : MonoBehaviour
         Vector3 pos = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
         // create the limb for the player to move around
         GameObject StoredLimb = Instantiate(Instantiate, pos, Quaternion.identity);
-        StoredLimb.GetComponent<MeshFilter>().mesh = Limb.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        StoredLimb.GetComponent<MeshRenderer>().materials = Limb.GetComponent<SkinnedMeshRenderer>().materials;
-        StoredLimb.transform.eulerAngles = new Vector3(-90, 0, 0);
+        GameObject limbModel = StoredLimb.transform.GetChild(0).gameObject;
+        limbModel.GetComponent<MeshFilter>().mesh = Limb.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        limbModel.GetComponent<MeshRenderer>().materials = Limb.GetComponent<SkinnedMeshRenderer>().materials;
+        limbModel.transform.eulerAngles = new Vector3(-90, 0, 0);
         StoredLimb.tag = Limb.tag;
+        limbModel.tag = Limb.tag;
         // set the limb type and limb enum to the one that the player removed
         StoredLimb.GetComponent<LimbClassification>().Limb = Limb.GetComponent<LimbClassification>().Limb;
         StoredLimb.GetComponent<LimbClassification>().LimbType = Limb.GetComponent<LimbClassification>().LimbType;
@@ -37,6 +39,7 @@ public class RemovedLimbsManager : MonoBehaviour
     void BandAidFix(GameObject limb)
     {
         LimbClassification limbStats = limb.GetComponent<LimbClassification>();
+        GameObject limbModel = limb.transform.GetChild(0).gameObject;
 
         //heads
         if (limbStats.Limb == global::Limb.head)
@@ -75,7 +78,7 @@ public class RemovedLimbsManager : MonoBehaviour
 
             if (limbStats.LimbType == LimbCharacter.Buff)
             {
-                limb.transform.localEulerAngles = new Vector3(0, 0, 0);
+                limb.transform.localEulerAngles = new Vector3(0, 0, 0); 
             }
 
             if (limbStats.LimbType == LimbCharacter.Curvy)
