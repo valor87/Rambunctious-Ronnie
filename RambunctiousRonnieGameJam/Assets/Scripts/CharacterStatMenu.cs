@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static Trait;
 
 public class CharacterStatMenu : MonoBehaviour
 {
@@ -91,9 +92,9 @@ public class CharacterStatMenu : MonoBehaviour
         showNum.text = $"Show: {showNumber + 1}";
     }
 
-    void UpdateGenreTitle(string tempGenreTitle)
+    void UpdateGenreTitle(Genres tempGenreTitle)
     {
-        genreTitle.text = tempGenreTitle;
+        genreTitle.text = tempGenreTitle.ToString();
     }
 
     void UpdateSuccessChance(float displayedChance)

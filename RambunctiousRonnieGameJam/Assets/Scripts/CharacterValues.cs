@@ -123,6 +123,7 @@ public class CharacterValues : MonoBehaviour
 
     IEnumerator MovingOffScreen()
     {
+        eventCore.playVariousSfxEV.Invoke(0); //plays drumroll
         Vector3 newPos = transform.position;
         float timer = 0f;
         while (timer < deleteTimer)

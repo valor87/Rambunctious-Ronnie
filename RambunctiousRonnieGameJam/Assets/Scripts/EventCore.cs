@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using static Trait;
 
 public class EventCore : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class EventCore : MonoBehaviour
 
     [HideInInspector]
     //event for updating the genre in the character stat menu. follows changeGenreEV
-    public UnityEvent<string> updateGenreEV;
+    public UnityEvent<Genres> updateGenreEV;
 
     [HideInInspector]
     //event for calculating the success chance. should happen when a new character is created or when a body part is swapped out
@@ -79,6 +80,14 @@ public class EventCore : MonoBehaviour
 
     [HideInInspector]
     public UnityEvent loseGameEV;
+
+    [HideInInspector]
+    //event for playing a sfx once. usually from the sound manager
+    public UnityEvent<AudioClip> playOneShotEV;
+
+    [HideInInspector]
+    //event for playing an sfx from the various sfx list in the sound manager
+    public UnityEvent<int> playVariousSfxEV;
 
     private void Start()
     {

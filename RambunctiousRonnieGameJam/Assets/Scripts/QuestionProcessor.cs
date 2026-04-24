@@ -7,6 +7,7 @@ public class QuestionProcessor : MonoBehaviour
     public GameObject characterObj;
     public TextMeshProUGUI textbox;
     public TextMeshProUGUI[] traitTexts = new TextMeshProUGUI[3];
+    public AudioClip[] soundEffects = new AudioClip[3];
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +30,8 @@ public class QuestionProcessor : MonoBehaviour
 
     void ProcessQuestion(Question question)
     {
-        bool didUniqueReply = false; //temporary, will probably remove later
+        bool didUniqueReply = false;
+        bool revealedTrait = false;
         Character characterData = characterObj.GetComponent<CharacterValues>().CharactersValues;
         for (int i = 0; i < question.traitsRevealed.Count; i++)
         {
@@ -37,6 +39,7 @@ public class QuestionProcessor : MonoBehaviour
             if (characterData.traitList.Contains(selectedTrait))
             {
                 print($"Revealed Trait: {selectedTrait}");
+                revealedTrait = true;
                 eventCore.revealTraitEV.Invoke(selectedTrait);
             }
         }
@@ -58,5 +61,12 @@ public class QuestionProcessor : MonoBehaviour
             print($"Default reply: {question.defaultReply}");
             textbox.text = question.defaultReply;
         }
+
+        if (revealedTrait)
+            eventCore.playOneShotEV.Invoke(soundEffects[2]);
+        else if (didUniqueReply)
+            eventCore.playOneShotEV.Invoke(soundEffects[1]);
+        else
+            eventCore.playOneShotEV.Invoke(soundEffects[0]);
     }
 }

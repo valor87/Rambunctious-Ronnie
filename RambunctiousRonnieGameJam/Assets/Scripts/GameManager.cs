@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        eventCore.updateGenreEV.Invoke(currentShowGenre.ToString());
+        eventCore.updateGenreEV.Invoke(currentShowGenre);
     }
 
     void IncreaseScore()

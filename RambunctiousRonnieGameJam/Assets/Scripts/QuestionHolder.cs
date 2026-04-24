@@ -19,8 +19,8 @@ public class QuestionHolder : MonoBehaviour
 
         eventCore.createNewCharacterEV.AddListener(EnableQuestion);
         eventCore.followApproveCharacterEV.AddListener(EnableQuestion);
-        eventCore.winGameEV.AddListener(disableSelf);
-        eventCore.loseGameEV.AddListener(disableSelf);
+        eventCore.winGameEV.AddListener(DisableSelf);
+        eventCore.loseGameEV.AddListener(DisableSelf);
 
         if (question.questionText == null)
         {
@@ -52,7 +52,7 @@ public class QuestionHolder : MonoBehaviour
         textObj.color = Color.black;
     }
 
-    void disableSelf()
+    void DisableSelf()
     {
         gameObject.SetActive(false);
     }

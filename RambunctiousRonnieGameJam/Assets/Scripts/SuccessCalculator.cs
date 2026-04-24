@@ -163,11 +163,13 @@ public class SuccessCalculator : MonoBehaviour
         if (randomNum <= actualChance)
         {
             eventCore.successfulShowEV.Invoke();
+            eventCore.playVariousSfxEV.Invoke(1);
             print("show is success");
         }
         else
         {
             eventCore.failureShowEV.Invoke();
+            eventCore.playVariousSfxEV.Invoke(2);
             print("show is failure");
         }
     }
