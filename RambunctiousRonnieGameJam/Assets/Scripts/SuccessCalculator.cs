@@ -146,10 +146,10 @@ public class SuccessCalculator : MonoBehaviour
         bodyPartChance *= bodyPartChanceConversion;
 
         actualChance = baseChance + traitChance + bodyPartChance;
-        print($"Trait Chance: {traitChance / traitChanceConversion * 100}\nBodypart Chance: {bodyPartChance / bodyPartChanceConversion * 100}\n Actual Chance: {actualChance * 100}");
+        //print($"Trait Chance: {traitChance / traitChanceConversion * 100}\nBodypart Chance: {bodyPartChance / bodyPartChanceConversion * 100}\n Actual Chance: {actualChance * 100}");
 
         float displayedChance = Mathf.Round((baseChance + displayedTraitChance + bodyPartChance) * 100);
-        print($"Displayed Chance: {displayedChance}");
+        //print($"Displayed Chance: {displayedChance}");
 
         eventCore.updateSuccessChanceEV.Invoke(displayedChance);
     }

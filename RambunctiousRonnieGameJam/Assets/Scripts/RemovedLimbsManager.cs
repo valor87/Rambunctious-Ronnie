@@ -25,7 +25,7 @@ public class RemovedLimbsManager : MonoBehaviour
         GameObject limbModel = StoredLimb.transform.GetChild(0).gameObject;
         limbModel.GetComponent<MeshFilter>().mesh = Limb.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         limbModel.GetComponent<MeshRenderer>().materials = Limb.GetComponent<SkinnedMeshRenderer>().materials;
-        limbModel.transform.eulerAngles = new Vector3(-90, 0, 0);
+        StoredLimb.transform.eulerAngles = new Vector3(-90, 0, 0);
         StoredLimb.tag = Limb.tag;
         limbModel.tag = Limb.tag;
         // set the limb type and limb enum to the one that the player removed
@@ -40,6 +40,7 @@ public class RemovedLimbsManager : MonoBehaviour
     {
         LimbClassification limbStats = limb.GetComponent<LimbClassification>();
         GameObject limbModel = limb.transform.GetChild(0).gameObject;
+        GameObject limbCollision = limb.transform.GetChild(1).gameObject;
 
         //heads
         if (limbStats.Limb == global::Limb.head)
@@ -48,6 +49,7 @@ public class RemovedLimbsManager : MonoBehaviour
             if (limbStats.LimbType == LimbCharacter.Thin)
             {
                 limb.transform.localScale = new Vector3(1.33f, 1.33f, 1.33f);
+                limbCollision.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             }
         }
 
@@ -58,7 +60,9 @@ public class RemovedLimbsManager : MonoBehaviour
 
             if (limbStats.LimbType == LimbCharacter.Thin)
             {
-                limb.transform.localScale = new Vector3(4.5f, 9f, 4.5f);
+                limb.transform.localScale = new Vector3(5f, 10f, 5f);
+                limbCollision.transform.localScale = new Vector3(0.03f, 0.02f, 0.03f);
+                return;
             }
         }
 
@@ -67,7 +71,7 @@ public class RemovedLimbsManager : MonoBehaviour
         {
             if (limbStats.LimbType == LimbCharacter.Thin)
             {
-                limb.transform.localScale = new Vector3(1.33f, 1.33f, 1.33f);
+                limb.transform.localScale = new Vector3(9.75f, 9.75f, 9.75f);
                 limb.transform.localEulerAngles = new Vector3(0, 0, 75);
             }
 
@@ -94,6 +98,7 @@ public class RemovedLimbsManager : MonoBehaviour
             if (limbStats.LimbType == LimbCharacter.Thin)
             {
                 limb.transform.localScale = new Vector3(25f, 25f, 25f);
+                limbCollision.transform.localScale = new Vector3(0.008f, 0.008f, 0.008f);
                 limb.transform.localEulerAngles = new Vector3(0, -270, 90);
             }
 

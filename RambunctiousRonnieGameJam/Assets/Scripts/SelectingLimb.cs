@@ -37,7 +37,8 @@ public class SelectingLimb : MonoBehaviour
 
         if (Physics.Raycast(MouseRay, out hit, 100))
         {
-            LimbClass = hit.collider.gameObject.GetComponent<LimbClassification>();
+            //LimbClass = hit.collider.gameObject.GetComponent<LimbClassification>();
+            LimbClass = hit.collider.gameObject.GetComponentInParent<LimbClassification>();
 
             if (LimbClass == null)
                 return;
@@ -60,7 +61,8 @@ public class SelectingLimb : MonoBehaviour
             // the plaeyr is moving the ui limb
             if (Input.GetMouseButton(0))
             {
-                moveLimbFromInventory(hit.collider.gameObject, hit.point);
+                print($"hit: {hit.transform.gameObject}");
+                moveLimbFromInventory(hit.transform.gameObject, hit.point);
             }
             // setting the enum of what the player is looking at
             LookingAtLimb = hoverLimb;
@@ -72,9 +74,11 @@ public class SelectingLimb : MonoBehaviour
 
     void moveLimbFromInventory(GameObject LC, Vector3 hit)
     {
+        print("checking the limb");
+        
         if (LC.layer == 7)
         {
-
+            print("should be moving the limb");
             LC.transform.position = new Vector3(hit.x, hit.y, LC.transform.position.z);
         }
     }
