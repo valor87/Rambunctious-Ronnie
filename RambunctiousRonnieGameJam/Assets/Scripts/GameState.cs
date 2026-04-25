@@ -4,44 +4,68 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour
 {
     EventCore eventCore;
-    public TextMeshProUGUI text;
+    public GameObject endScreen;
+    Image endScreenBg;
+
+    [Header("Parameters")]
+
+    public float secondsToAppear = 2;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        text.enabled = false;
+        endScreen.SetActive(false);
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        eventCore.winGameEV.AddListener(winGame);
-        eventCore.loseGameEV.AddListener(loseGame);
+        eventCore.winGameEV.AddListener(WinGame);
+        eventCore.loseGameEV.AddListener(LoseGame);
+
+        endScreenBg = endScreen.transform.GetChild(0).GetComponent<Image>();
     }
 
-    void winGame()
+    void WinGame()
     {
-        StartCoroutine(EndGmae(true));
+        endScreenBg.color = new Color32(175, 255, 148, 255);
+
+        SetText("You Win!");
+        StartCoroutine(EndGame(true));
     }
-    void loseGame()
+    void LoseGame()
     {
-        StartCoroutine(EndGmae(false));
+        endScreenBg.color = new Color32(175, 0, 19, 255);
+
+        SetText("You Lose...");
+        StartCoroutine(EndGame(false));
     }
-    IEnumerator EndGmae(bool wingame)
+    IEnumerator EndGame(bool wingame)
     {
-        text.enabled = true;
-        if (wingame)
+        RectTransform endScreenTransform = endScreen.GetComponent<RectTransform>();
+        Vector3 originalPos = endScreenTransform.anchoredPosition;
+
+        endScreen.SetActive(true);
+        
+        while (endScreenTransform.anchoredPosition.y > 0)
         {
-            SetText("You Win");
+            Vector3 newPos = endScreenTransform.anchoredPosition;
+            newPos.y -= originalPos.y / secondsToAppear * Time.deltaTime;
+            endScreenTransform.anchoredPosition = newPos;
+
+            yield return new WaitForEndOfFrame();
         }
-        else if (!wingame)
-        {
-            SetText("You Lose");
-        }
+
+        endScreenTransform.anchoredPosition = Vector3.zero;
+
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("TitleScreen");
     }
     void SetText(string TstateText)
     {
-        text.text = TstateText;
+        TextMeshProUGUI endScreenText = endScreen.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        endScreenText.text = TstateText;
     }
 }
