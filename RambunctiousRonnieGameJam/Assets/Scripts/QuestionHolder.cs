@@ -1,13 +1,16 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class QuestionHolder : MonoBehaviour
+public class QuestionHolder : MonoBehaviour, IPointerEnterHandler
 {
     EventCore eventCore;
     public TextMeshProUGUI textObj;
     public Question question;
     public bool questionDisabled;
+    public AudioClip hoverSfx;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,10 +35,10 @@ public class QuestionHolder : MonoBehaviour
 
     public void invokeAskQuestion()
     {
-        print("invoking askQuestionEV");
         if (!questionDisabled)
         {
             eventCore.askQuestionEV.Invoke(question);
+            //eventCore.playOneShotEV.Invoke(clickSfx);
             DisableQuestion();
         }
     }
@@ -55,5 +58,14 @@ public class QuestionHolder : MonoBehaviour
     void DisableSelf()
     {
         gameObject.SetActive(false);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!questionDisabled)
+        {
+            eventCore.playOneShotEV.Invoke(hoverSfx);
+        }
+        
     }
 }

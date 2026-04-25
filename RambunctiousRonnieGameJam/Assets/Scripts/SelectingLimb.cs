@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SelectingLimb : MonoBehaviour
 {
+    EventCore eventCore;
+    
     [Header("The limb and type the player is looking at")]
     public Limb LookingAtLimb;
     public LimbCharacter LookingAtLimbType;
@@ -18,6 +20,11 @@ public class SelectingLimb : MonoBehaviour
     public bool salvagePhase = false;
 
     bool removingALimb;
+
+    private void Start()
+    {
+        eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -90,7 +97,9 @@ public class SelectingLimb : MonoBehaviour
     // wait for the animation to finish
     IEnumerator RemoveLimb(GameObject LC)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+        eventCore.playVariousSfxEV.Invoke(3); //play limb pop sound
+        yield return new WaitForSeconds(0.5f);
         LC.gameObject.SetActive(false);
         RemovedLimbs.SeveredLimb(LC);
         removingALimb = false;

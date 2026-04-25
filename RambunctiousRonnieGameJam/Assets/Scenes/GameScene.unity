@@ -174,6 +174,7 @@ MonoBehaviour:
   textObj: {fileID: 451081138}
   question: {fileID: 11400000, guid: 227c74e4bad49704c9e74cb0fcf82624, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &13291806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1638,6 +1639,7 @@ MonoBehaviour:
   textObj: {fileID: 821476582}
   question: {fileID: 11400000, guid: c6146734647347943a2748d04c90405a, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &291159071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2180,6 +2182,7 @@ MonoBehaviour:
   textObj: {fileID: 1611307963}
   question: {fileID: 11400000, guid: 98fd59a1357e3ca4aa9c92ceeba62564, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &351594430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2555,6 +2558,7 @@ MonoBehaviour:
   textObj: {fileID: 2019266496}
   question: {fileID: 11400000, guid: df466976a9bed6442813adacc49d389c, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &378987376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2704,6 +2708,7 @@ MonoBehaviour:
   textObj: {fileID: 632896223}
   question: {fileID: 11400000, guid: b9951e8638eccd84d9d2baa70fe6df0f, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &381929713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3136,6 +3141,7 @@ MonoBehaviour:
   textObj: {fileID: 669659144}
   question: {fileID: 11400000, guid: 9abd049cc3399aa428213bd202d95b17, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &488452860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4980,6 +4986,7 @@ MonoBehaviour:
   textObj: {fileID: 1001002128}
   question: {fileID: 11400000, guid: 1a5cab2936035e24097164315bf4c51f, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &866529200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6150,6 +6157,7 @@ GameObject:
   - component: {fileID: 1148583207}
   - component: {fileID: 1148583206}
   - component: {fileID: 1148583205}
+  - component: {fileID: 1148583208}
   m_Layer: 5
   m_Name: ApproveButton
   m_TagString: Untagged
@@ -6271,6 +6279,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148583203}
   m_CullTransparentMesh: 1
+--- !u!114 &1148583208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148583203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7576bf5571d5cd479640c754c73c509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSfx: {fileID: 8300000, guid: 414500fb84763204ca95fa2938fb8b33, type: 3}
 --- !u!114 &1155215192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3772560357792848362, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
@@ -7413,6 +7434,7 @@ MonoBehaviour:
   textObj: {fileID: 74409787}
   question: {fileID: 11400000, guid: 7bbe28348c5017e44a4152f41a8e6ed6, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!1001 &1448302165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7590,6 +7612,7 @@ MonoBehaviour:
   textObj: {fileID: 324491088}
   question: {fileID: 11400000, guid: 4a04eb8d281bdfa44b2b758ac4eeacd8, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &1462350695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9282,6 +9305,7 @@ MonoBehaviour:
   textObj: {fileID: 587777387}
   question: {fileID: 11400000, guid: 0ddfc1ad6ad36fc4eb6edddc8d432c44, type: 2}
   questionDisabled: 0
+  hoverSfx: {fileID: 8300000, guid: eab3e3a4908d2d3468ccd946fe2478b3, type: 3}
 --- !u!114 &1914933259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10173,6 +10197,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5ac8c8ba66f500c449b8312e9a21eba1, type: 3}
   - {fileID: 8300000, guid: 49278cb92c442fa4db7a690539c7be23, type: 3}
   - {fileID: 8300000, guid: d9b81028ebe8f4e4ca253e8809c5dc8e, type: 3}
+  - {fileID: 8300000, guid: c101ca374f7b74f4e919c790e7d891e6, type: 3}
+  - {fileID: 8300000, guid: d5eea4a6cdc13d74891bda03e2715f0f, type: 3}
+  - {fileID: 8300000, guid: 414500fb84763204ca95fa2938fb8b33, type: 3}
+  - {fileID: 8300000, guid: c43a045854b556448b59babb1c8ebe3e, type: 3}
 --- !u!82 &2111925482
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10376,6 +10404,7 @@ GameObject:
   - component: {fileID: 2130067237}
   - component: {fileID: 2130067236}
   - component: {fileID: 2130067235}
+  - component: {fileID: 2130067238}
   m_Layer: 5
   m_Name: DenyButton
   m_TagString: Untagged
@@ -10497,6 +10526,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130067233}
   m_CullTransparentMesh: 1
+--- !u!114 &2130067238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130067233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7576bf5571d5cd479640c754c73c509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSfx: {fileID: 8300000, guid: c43a045854b556448b59babb1c8ebe3e, type: 3}
 --- !u!1 &2137676889
 GameObject:
   m_ObjectHideFlags: 0

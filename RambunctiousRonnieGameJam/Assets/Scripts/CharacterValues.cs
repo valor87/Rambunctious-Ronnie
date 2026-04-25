@@ -15,8 +15,9 @@ public class CharacterValues : MonoBehaviour
     public float moveSpeed = 2f;
     public float deleteTimer = 2f;
     public float cutoffMagnitude = 0.1f;
-    EventCore eventCore; 
+    EventCore eventCore;
     string type;
+    bool approved; //just for making the drumroll play only once
     private void Start()
     {
         characterHitboxes = transform.Find("CharacterHitBoxes").gameObject;
@@ -117,13 +118,19 @@ public class CharacterValues : MonoBehaviour
 
     void MoveOffScreen()
     {
-        characterHitboxes.SetActive(false);
-        StartCoroutine(MovingOffScreen());
+        if (!approved)
+        {
+            approved = true;
+            eventCore.playVariousSfxEV.Invoke(0);
+
+            characterHitboxes.SetActive(false);
+            StartCoroutine(MovingOffScreen());
+        }
+
     }
 
     IEnumerator MovingOffScreen()
     {
-        eventCore.playVariousSfxEV.Invoke(0); //plays drumroll
         Vector3 newPos = transform.position;
         float timer = 0f;
         while (timer < deleteTimer)

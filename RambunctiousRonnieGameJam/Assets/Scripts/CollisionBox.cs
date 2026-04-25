@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CollisionBox : MonoBehaviour
 {
+    EventCore eventCore;
+    
     [Header("The tag that the box is looking for, the body part")]
     public string tagLookingFor;
     [Header("The limb that this is working for")]
@@ -12,6 +14,8 @@ public class CollisionBox : MonoBehaviour
     
     private void Start()
     {
+        eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        
         RemovableLimbManager = GameObject.Find("RemovedLimbManager").GetComponent<RemovedLimbsManager>();
     }
     private void OnTriggerEnter(Collider other)
@@ -21,6 +25,7 @@ public class CollisionBox : MonoBehaviour
         if (isTrash)
         {
             GetRidOfLimb(uiLimb);
+            eventCore.playVariousSfxEV.Invoke(4); //play trash sfx
             return;
         }
             
