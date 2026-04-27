@@ -1901,9 +1901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd21f920a71b0c343bbf420a7081161d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
+  settings: {fileID: 11400000, guid: 131cc87cf7e08b84ebdb556b3bf0689d, type: 2}
+  musicVolumeSlider: {fileID: 1568466820}
+  sfxVolumeSlider: {fileID: 1607003232}
 --- !u!1 &1238337021
 GameObject:
   m_ObjectHideFlags: 0

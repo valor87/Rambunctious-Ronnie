@@ -159,6 +159,14 @@ public class SuccessCalculator : MonoBehaviour
         CalculateActualChance();
 
         float randomNum = Random.Range(0f, 101f) / 100f;
+        //if actual chance is over 50%, do 3 RN to make it more likely of occuring
+        if (actualChance > 0.5f)
+        {
+            float randNum2 = Random.Range(0f, 101f) / 100f;
+            float randNum3 = Random.Range(0f, 101f) / 100f;
+            randomNum = (randomNum + randNum2 + randNum3) / 3;
+        }
+
         print($"Num: {randomNum * 100f}");
         if (randomNum <= actualChance)
         {

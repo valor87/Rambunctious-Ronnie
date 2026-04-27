@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3beab02096f213146a7d0993c5487e52, type: 3}
   m_Name: MysteryThriller
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: 70c2e53b149ad1d4eb26be55092fd7c8, type: 3}
-  loopStart: 2.23
-  loopEnd: -1
+  bgm: {fileID: 8300000, guid: 421a869cac186e54d941eb047666a615, type: 3}
+  loopStart: 2.086
+  loopEnd: 35.478
+  volume: 1

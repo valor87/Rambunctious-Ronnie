@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,5 +28,19 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+    }
 
 }

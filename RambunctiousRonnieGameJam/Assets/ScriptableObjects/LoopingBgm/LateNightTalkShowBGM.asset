@@ -15,3 +15,4 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: cb54ce303ad6b0e4197752425408cf0c, type: 3}
   loopStart: 0
   loopEnd: -1
+  volume: 0.5

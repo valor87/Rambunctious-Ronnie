@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3beab02096f213146a7d0993c5487e52, type: 3}
   m_Name: Improv
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: b2afb3d7ab54d43439db005c8fb06161, type: 3}
-  loopStart: 2.3
-  loopEnd: -1
+  bgm: {fileID: 8300000, guid: fd5d8a737d161b8418c3977994fafce0, type: 3}
+  loopStart: 2.181
+  loopEnd: 37.09
+  volume: 1
