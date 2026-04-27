@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using static Trait;
 
 public class CharacterStatMenu : MonoBehaviour
@@ -119,7 +119,7 @@ public class CharacterStatMenu : MonoBehaviour
         charactersAmount.text = $"Characters: {charactersLeft}";
     }
 
-    void RevealTrait(Trait selectedTrait)
+    void RevealTrait(Trait selectedTrait, int traitType)
     {
         for (int i = 0; i < traitTexts.Length; i++)
         {
@@ -131,6 +131,26 @@ public class CharacterStatMenu : MonoBehaviour
                 break;
 
             traitTexts[i].text = selectedTrait.traitName;
+            Image traitTextBg = traitTexts[i].transform.GetChild(0).GetComponent<Image>();
+           
+            if (traitTextBg == null)
+            {
+                Debug.LogError($"Missing panel for a trait text: {traitTexts[i]}");
+                return;
+            }
+
+            if (traitType == 1) //if trait is positive, be green
+            {
+                traitTextBg.color = new Color32(0, 255, 0, 100);
+            }
+            else if (traitType == 2) //if trait is negative, be red
+            {
+                traitTextBg.color = new Color32(255, 0, 0, 100);
+            }
+            else //if trait is neutral, be white
+            {
+                traitTextBg.color = new Color32(255, 255, 255, 100);
+            }
         }
     }
     public bool CheckIfTraitIsRevealed(Trait selectedTrait)

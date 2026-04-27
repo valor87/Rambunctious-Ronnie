@@ -33,6 +33,8 @@ public class SuccessCalculator : MonoBehaviour
     [Tooltip("How much each positive body part should increase the body part chance. Should be 1f/6f% (16.67~%).")]
     public float bodyPartChanceUpStep = 1f/6f;
 
+    Genres currentGenre;
+
     float traitChance;
     float bodyPartChance;
     float actualChance;
@@ -87,11 +89,21 @@ public class SuccessCalculator : MonoBehaviour
             CalculateActualChance();
     }
 
+    public bool CheckPositiveTrait(Trait trait)
+    {
+        return trait.positiveGenres.Contains(currentGenre);
+    }
+
+    public bool CheckNegativeTrait(Trait trait)
+    {
+        return trait.negativeGenres.Contains(currentGenre);
+    }
+
     void CalculateActualChance()
     {
         CharacterValues characterObjValues = characterObj.GetComponent<CharacterValues>();
         Character characterData = characterObjValues.CharactersValues;
-        Genres currentGenre = gameManager.currentShowGenre;
+        currentGenre = gameManager.currentShowGenre;
         traitChance = 0;
         float displayedTraitChance = 0;
         bodyPartChance = 0;
@@ -99,7 +111,7 @@ public class SuccessCalculator : MonoBehaviour
 
         foreach (Trait trait in characterData.traitList)
         {
-            if (trait.positiveGenres.Contains(currentGenre))
+            if (CheckPositiveTrait(trait))
             {
                 traitChance += traitChanceUpStep;
                 if (characterStatMenu.CheckIfTraitIsRevealed(trait))
@@ -111,7 +123,7 @@ public class SuccessCalculator : MonoBehaviour
                 continue;
             }
 
-            if (trait.negativeGenres.Contains(currentGenre))
+            if (CheckNegativeTrait(trait))
             {
                 traitChance -= traitChanceDownStep;
                 if (characterStatMenu.CheckIfTraitIsRevealed(trait))

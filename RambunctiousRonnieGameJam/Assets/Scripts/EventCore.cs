@@ -25,7 +25,7 @@ public class EventCore : MonoBehaviour
 
     [HideInInspector]
     //event for revealing traits in the character stat menu
-    public UnityEvent<Trait> revealTraitEV;
+    public UnityEvent<Trait, int> revealTraitEV;
 
     [HideInInspector]
     //event for changing genres. should happen once the player gets a successful show, which could also be an event in itself
