@@ -10292,20 +10292,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108d903e4f7334a48acb45409483b235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentBgm: {fileID: 0}
   genreMusic:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
+  - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
+  - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
+  - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
+  - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
+  - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
+  - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
+  - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
+  - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
+  - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
+  - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
+  - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
   variousSfx:
   - {fileID: 8300000, guid: 5ac8c8ba66f500c449b8312e9a21eba1, type: 3}
   - {fileID: 8300000, guid: 49278cb92c442fa4db7a690539c7be23, type: 3}
@@ -10314,6 +10315,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d5eea4a6cdc13d74891bda03e2715f0f, type: 3}
   - {fileID: 8300000, guid: 414500fb84763204ca95fa2938fb8b33, type: 3}
   - {fileID: 8300000, guid: c43a045854b556448b59babb1c8ebe3e, type: 3}
+  - {fileID: 8300000, guid: bbd4e4a0ca5489645849826f74b05c20, type: 3}
 --- !u!82 &2111925482
 AudioSource:
   m_ObjectHideFlags: 0

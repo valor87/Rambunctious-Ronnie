@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
             if (randomGenre != currentShowGenre)
             {
                 currentShowGenre = randomGenre;
+                currentShowGenre = Genres.MysteryThriller;
                 break;
             }
         }
