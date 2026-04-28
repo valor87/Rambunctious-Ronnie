@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -106,6 +107,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        StartCoroutine(UpdateGenreDelayedInvokeEV(0.25f));
+    }
+
+    IEnumerator UpdateGenreDelayedInvokeEV(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         eventCore.updateGenreEV.Invoke(currentShowGenre);
     }
 

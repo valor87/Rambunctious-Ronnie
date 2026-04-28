@@ -16,6 +16,7 @@ public class CharacterValues : MonoBehaviour
     public float deleteTimer = 2f;
     public float cutoffMagnitude = 0.1f;
     EventCore eventCore;
+    SuccessCalculator successCalculator;
     string type;
     bool approved; //just for making the drumroll play only once
     private void Start()
@@ -25,6 +26,9 @@ public class CharacterValues : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
         eventCore.approveCharacterEV.AddListener(MoveOffScreen);
         eventCore.denyCharacterEV.AddListener(DisableHitboxes);
+
+        successCalculator = GameObject.Find("SuccessCalculator").GetComponent<SuccessCalculator>();
+
         int index = 1;
 
         // gets the list of the children
@@ -71,6 +75,14 @@ public class CharacterValues : MonoBehaviour
                 }
 
                 index++;
+            }
+
+            //display the compatibility text if the limb correlates with the genre
+            GameObject limbOverlay = LimbClass.transform.GetChild(0).gameObject;
+            print($"limb overlay: {limbOverlay} \nlimb type: {LimbClass.LimbType}");
+            if (successCalculator.CheckLimbCompatibility(LimbClass))
+            {
+                limbOverlay.SetActive(true);
             }
         }
     }
@@ -142,6 +154,7 @@ public class CharacterValues : MonoBehaviour
         }
 
         eventCore.followApproveCharacterEV.Invoke();
+        eventCore.CreateNewCharacterDelayedInvokeEV(1);
         Destroy(gameObject);
         yield return null;
         

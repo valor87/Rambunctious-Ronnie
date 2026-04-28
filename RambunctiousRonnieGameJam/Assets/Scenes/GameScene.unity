@@ -5274,15 +5274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.158
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.644
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.567
+      value: -8.758
       objectReference: {fileID: 0}
     - target: {fileID: 3965697522896123383, guid: 9b1a303acdd7eff46af23636c84ab814, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8606,6 +8606,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RemovedLimbManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3772560357792848362, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: normalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: deb795b1c1ef4e942b7e53a84adda8aa, type: 2}
+    - target: {fileID: 3772560357792848362, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
+      propertyPath: correctMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d109b2430ec5c5342b10504afa4a93c7, type: 2}
     - target: {fileID: 4716446415376275211, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.2
@@ -8648,7 +8656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.635
+      value: -8.758
       objectReference: {fileID: 0}
     - target: {fileID: 7120231443551000999, guid: 0d2f8ac39143c56409e891f3db88e7b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11002,7 +11010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterObj: {fileID: 0}
   characterStatMenu: {fileID: 0}
-  baseChance: 0.2
+  baseChance: 0.6
   traitChanceConversion: 0.4
   bodyPartChanceConversion: 0.4
   traitChanceUpStep: 0.4

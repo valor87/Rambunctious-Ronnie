@@ -79,12 +79,14 @@ public class SuccessCalculator : MonoBehaviour
 
     void SetNewCharacter(GameObject newCharacterObj)
     {
+        currentGenre = gameManager.currentShowGenre;
         characterObj = newCharacterObj;
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentGenre = gameManager.currentShowGenre;
         if (characterObj != null)
             CalculateActualChance();
     }
@@ -99,11 +101,15 @@ public class SuccessCalculator : MonoBehaviour
         return trait.negativeGenres.Contains(currentGenre);
     }
 
+    public bool CheckLimbCompatibility(LimbClassification limbData)
+    {
+        return correspondingGenresToLimbTypes[(int)currentGenre] == limbData.LimbType;
+    }
+
     void CalculateActualChance()
     {
         CharacterValues characterObjValues = characterObj.GetComponent<CharacterValues>();
         Character characterData = characterObjValues.CharactersValues;
-        currentGenre = gameManager.currentShowGenre;
         traitChance = 0;
         float displayedTraitChance = 0;
         bodyPartChance = 0;
@@ -137,9 +143,8 @@ public class SuccessCalculator : MonoBehaviour
         foreach (GameObject bodyPart in characterObjValues.ChildObjectsBodyParts)
         {
             LimbClassification limb = bodyPart.GetComponent<LimbClassification>();
-            int currentGenreId = (int)currentGenre;
 
-            if (correspondingGenresToLimbTypes[currentGenreId] == limb.LimbType)
+            if (CheckLimbCompatibility(limb))
             {
                 bodyPartChance += bodyPartChanceUpStep;
             }

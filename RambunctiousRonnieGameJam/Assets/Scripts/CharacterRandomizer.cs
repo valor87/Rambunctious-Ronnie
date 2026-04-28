@@ -52,7 +52,7 @@ public class CharacterRandomizer : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
 
         eventCore.createNewCharacterEV.AddListener(RandomizeCharacter);
-        eventCore.followApproveCharacterEV.AddListener(RandomizeCharacter);
+        //eventCore.followApproveCharacterEV.AddListener(RandomizeCharacter);
         eventCore.denyCharacterEV.AddListener(ShiftCharacterToOld);
     }
 

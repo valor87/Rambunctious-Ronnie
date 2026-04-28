@@ -96,7 +96,7 @@ public class EventCore : MonoBehaviour
 
     public void CreateNewCharacterDelayedInvokeEV(float delay)
     {
-        Invoke("CreateNewCharacterInvokeEV", delay);
+        Invoke(nameof(CreateNewCharacterInvokeEV), delay);
     }
 
     public void CreateNewCharacterInvokeEV()

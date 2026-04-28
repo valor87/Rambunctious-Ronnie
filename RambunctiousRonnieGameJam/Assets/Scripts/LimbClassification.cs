@@ -24,6 +24,7 @@ public class LimbClassification : MonoBehaviour
     public Limb Limb;
     public LimbCharacter LimbType;
     public Animator boneAnimator;
+    public bool compatibleLimb;
 
     private void Start()
     {

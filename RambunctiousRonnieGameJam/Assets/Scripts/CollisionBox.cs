@@ -29,7 +29,6 @@ public class CollisionBox : MonoBehaviour
             return;
         }
             
-
         if (uiLimb.CompareTag(tagLookingFor))
         {
             GameObject uiLimbModel = uiLimb.transform.GetChild(0).gameObject;
@@ -37,6 +36,21 @@ public class CollisionBox : MonoBehaviour
             print($"Found an object with a {tagLookingFor}");
             LimbClassification limbData = limb.GetComponent<LimbClassification>();
             limbData.LimbType = uiLimb.GetComponent<LimbClassification>().LimbType;
+
+            LimbClassification uiLimbData = uiLimb.GetComponent<LimbClassification>();
+            //show the limb overlay if the limb is compatible, otherwise don't
+            GameObject limbOverlay = limbData.transform.GetChild(0).gameObject;
+            if (uiLimbData.compatibleLimb)
+            {
+                limbOverlay.SetActive(true);
+                print($"showing the limb overlay now for {limbData.gameObject}");
+            }
+            else
+            {
+                print($"hiding the limb overlay now for {limbData.gameObject}");
+                limbOverlay.SetActive(false);
+            }
+                
 
             // swap the mesh
             limb.GetComponent<SkinnedMeshRenderer>().sharedMesh = uiLimbModel.GetComponent<MeshFilter>().mesh;
@@ -53,8 +67,8 @@ public class CollisionBox : MonoBehaviour
 
     void GetRidOfLimb(GameObject Limb)
     {
-        Destroy(Limb);
         RemovableLimbManager.limbsOwned.Remove(Limb.gameObject);
         RemovableLimbManager.LimbsOwned--;
+        Destroy(Limb);
     }
 }

@@ -1,27 +1,40 @@
 using System.Collections.Generic;
-using Mono.Cecil.Cil;
 using UnityEngine;
-using static LimbClassification;
+using static Trait;
 
 public class RemovedLimbsManager : MonoBehaviour
 {
     public List<GameObject> limbsOwned = new List<GameObject>();
     public int LimbsOwned;
     public GameObject Instantiate;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Materials")]
+    public Material correctMaterial;
+    public Material normalMaterial;
 
+    EventCore eventCore;
+    SuccessCalculator successCalculator;
+
+    private void Start()
+    {
+        eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        eventCore.updateGenreEV.AddListener(UpdateLimbOverlays);
+        
+        successCalculator = GameObject.Find("SuccessCalculator").GetComponent<SuccessCalculator>();
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void SeveredLimb(GameObject Limb)
     {
         // dont let the player have more than 3 limbs
         if(LimbsOwned >= 3)
             return;
         
-        limbsOwned.Add(Limb);
         // how many limbs the player has
         LimbsOwned++;
         Vector3 pos = gameObject.transform.Find($"Spot {LimbsOwned}").transform.position;
         // create the limb for the player to move around
         GameObject StoredLimb = Instantiate(Instantiate, pos, Quaternion.identity);
+        limbsOwned.Add(StoredLimb);
         GameObject limbModel = StoredLimb.transform.GetChild(0).gameObject;
         limbModel.GetComponent<MeshFilter>().mesh = Limb.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         limbModel.GetComponent<MeshRenderer>().materials = Limb.GetComponent<SkinnedMeshRenderer>().materials;
@@ -35,12 +48,42 @@ public class RemovedLimbsManager : MonoBehaviour
         BandAidFix(StoredLimb);
     }
 
+    void UpdateLimbOverlays(Genres _genre)
+    {
+        foreach (var limb in limbsOwned)
+        {
+            LimbClassification limbStats = limb.GetComponent<LimbClassification>();
+            GameObject limbCollision = limb.transform.GetChild(1).gameObject;
+
+            if (successCalculator.CheckLimbCompatibility(limbStats))
+            {
+                limbCollision.GetComponent<Renderer>().material = correctMaterial;
+                limbStats.compatibleLimb = true;
+            }
+            else
+            {
+                limbCollision.GetComponent<Renderer>().material = normalMaterial;
+                limbStats.compatibleLimb = false;
+            }
+                
+        }
+    }
+
     //hardcoded size and rotation fix for specific limbs
     void BandAidFix(GameObject limb)
     {
         LimbClassification limbStats = limb.GetComponent<LimbClassification>();
         GameObject limbModel = limb.transform.GetChild(0).gameObject;
         GameObject limbCollision = limb.transform.GetChild(1).gameObject;
+
+        //this section here is NOT a band-aid fix, but is in this function for convenience purposes
+        if (successCalculator.CheckLimbCompatibility(limbStats))
+        {
+            limbCollision.GetComponent<Renderer>().material = correctMaterial;
+            limbStats.compatibleLimb = true;
+        }
+
+        //everything here can be considered a band-aid fix
 
         //heads
         if (limbStats.Limb == global::Limb.head)
@@ -115,4 +158,6 @@ public class RemovedLimbsManager : MonoBehaviour
             }
         }
     }
+
+
 }
