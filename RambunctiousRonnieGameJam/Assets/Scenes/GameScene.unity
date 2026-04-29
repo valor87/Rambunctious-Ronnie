@@ -11010,7 +11010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterObj: {fileID: 0}
   characterStatMenu: {fileID: 0}
-  baseChance: 0.6
+  baseChance: 0.2
   traitChanceConversion: 0.4
   bodyPartChanceConversion: 0.4
   traitChanceUpStep: 0.4
@@ -12901,15 +12901,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
   - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
   - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
+  - {fileID: 11400000, guid: aee518c5a4c0f7d49a3a99c96319e268, type: 2}
+  - {fileID: 11400000, guid: 8e7782ed2a5be9e4089e609a1331e827, type: 2}
   - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
   - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
   - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
+  - {fileID: 11400000, guid: aee518c5a4c0f7d49a3a99c96319e268, type: 2}
+  - {fileID: 11400000, guid: 8e7782ed2a5be9e4089e609a1331e827, type: 2}
   - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
   - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
-  - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
-  - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
-  - {fileID: 11400000, guid: 4cfa6709bb3febd49bfe08eb586be6da, type: 2}
-  - {fileID: 11400000, guid: 9f8db375ccd5888459bb1017ac8aefe3, type: 2}
   variousSfx:
   - {fileID: 8300000, guid: 5ac8c8ba66f500c449b8312e9a21eba1, type: 3}
   - {fileID: 8300000, guid: 49278cb92c442fa4db7a690539c7be23, type: 3}

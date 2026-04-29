@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
             if (randomGenre != currentShowGenre)
             {
                 currentShowGenre = randomGenre;
-                //currentShowGenre = Genres.LateNightTalkShow;
+                currentShowGenre = Genres.ActionShow;
                 break;
             }
         }
