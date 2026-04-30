@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3beab02096f213146a7d0993c5487e52, type: 3}
-  m_Name: ActionShow
+  m_Name: RealitySurvivalShow
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: 405d75e489c02654d92220315f6a7894, type: 3}
-  loopStart: 1.714
-  loopEnd: 29.142
-  volume: 1
+  bgm: {fileID: 8300000, guid: 86a792cf1e1aacd4caf2638e41057ac7, type: 3}
+  loopStart: 2.181
+  loopEnd: 37.09
+  volume: 0.7

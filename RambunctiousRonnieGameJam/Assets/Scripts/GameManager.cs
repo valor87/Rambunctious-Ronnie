@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Genres currentShowGenre = Genres.None;
     public int lives = 3;
+    public int maxLives = 3;
     public int showNum = 0;
     public int showEndNum = 10;
 
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         eventCore.changeGenreEV.AddListener(ChangeGenre);
         eventCore.successfulShowEV.AddListener(IncreaseScore);
         eventCore.successfulShowEV.AddListener(ChangeGenre);
+        eventCore.successfulShowEV.AddListener(IncreaseLives);
         eventCore.failureShowEV.AddListener(DecreaseLives);
 
         ChangeGenre();
@@ -102,7 +104,7 @@ public class GameManager : MonoBehaviour
             if (randomGenre != currentShowGenre)
             {
                 currentShowGenre = randomGenre;
-                currentShowGenre = Genres.ActionShow;
+                //currentShowGenre = Genres.Horror;
                 break;
             }
         }
@@ -125,7 +127,16 @@ public class GameManager : MonoBehaviour
             eventCore.winGameEV.Invoke();
             print("YOU WIN!!!!!");
         }
-    }  
+    } 
+    
+    void IncreaseLives()
+    {
+        if (lives < maxLives)
+        {
+            lives++;
+            eventCore.updateLivesAmountEV.Invoke(lives);
+        }
+    }
 
     void DecreaseLives()
     {
