@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
             if (randomGenre != currentShowGenre)
             {
                 currentShowGenre = randomGenre;
-                //currentShowGenre = Genres.Horror;
+                //currentShowGenre = Genres.Sitcom;
                 break;
             }
         }
