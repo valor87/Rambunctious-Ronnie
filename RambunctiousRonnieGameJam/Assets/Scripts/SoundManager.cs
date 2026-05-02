@@ -12,11 +12,14 @@ public class SoundManager : MonoBehaviour
     [Header("Audio")]
     public LoopingBgm currentBgm;
     public float originalVolume;
+    public List<AudioClip> winLoseMusic;
     public List<LoopingBgm> genreMusic;
     public List<AudioClip> variousSfx;
 
     [Header("Miscellanous")]
     public Settings settings;
+
+    bool gameDone;
 
     private void Awake()
     {
@@ -32,7 +35,9 @@ public class SoundManager : MonoBehaviour
         eventCore.updateGenreEV.AddListener(ChangeMusic);
         eventCore.playOneShotEV.AddListener(PlayOneShot);
         eventCore.playVariousSfxEV.AddListener(PlayVariousSfx);
-        
+
+        eventCore.winGameEV.AddListener(PlayWinMusic);
+        eventCore.loseGameEV.AddListener(PlayLoseMusic);
     }
 
     // Update is called once per frame
@@ -40,7 +45,8 @@ public class SoundManager : MonoBehaviour
     {
         audioSourceBGM.volume = originalVolume * settings.musicVolume;
         audioSourceSFX.volume = settings.sfxVolume;
-        PlayLoopingBgm();
+        if (!gameDone)
+            PlayLoopingBgm();
     }
 
     public void PlayOneShot(AudioClip sfx)
@@ -102,4 +108,21 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+
+    void PlayWinMusic()
+    {
+        gameDone = true;
+        audioSourceBGM.loop = false;
+        audioSourceBGM.clip = winLoseMusic[0];
+        audioSourceBGM.Play();
+    }
+
+    void PlayLoseMusic()
+    {
+        gameDone = true;
+        audioSourceBGM.loop = false;
+        audioSourceBGM.clip = winLoseMusic[1];
+        audioSourceBGM.Play();
+    }
+
 }

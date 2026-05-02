@@ -15,6 +15,8 @@ public class GameState : MonoBehaviour
     [Header("Parameters")]
 
     public float secondsToAppear = 2;
+    [Tooltip("Also factors in seconds to appear. (this + seconds to appear = actual delay)")]
+    public float extraDelayBeforeMainMenu;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,7 +62,7 @@ public class GameState : MonoBehaviour
 
         endScreenTransform.anchoredPosition = Vector3.zero;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(extraDelayBeforeMainMenu);
         SceneManager.LoadScene("TitleScreen");
     }
     void SetText(string TstateText)

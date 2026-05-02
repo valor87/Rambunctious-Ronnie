@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         eventCore.changeGenreEV.AddListener(ChangeGenre);
         eventCore.successfulShowEV.AddListener(IncreaseScore);
-        eventCore.successfulShowEV.AddListener(ChangeGenre);
+        //eventCore.successfulShowEV.AddListener(ChangeGenre);
         eventCore.successfulShowEV.AddListener(IncreaseLives);
         eventCore.failureShowEV.AddListener(DecreaseLives);
 
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
             if (randomGenre != currentShowGenre)
             {
                 currentShowGenre = randomGenre;
-                //currentShowGenre = Genres.Sitcom;
+                currentShowGenre = Genres.MonsterFeature;
                 break;
             }
         }
@@ -126,6 +126,10 @@ public class GameManager : MonoBehaviour
         {
             eventCore.winGameEV.Invoke();
             print("YOU WIN!!!!!");
+        }
+        else
+        {
+            ChangeGenre();
         }
     } 
     

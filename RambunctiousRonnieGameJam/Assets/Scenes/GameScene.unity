@@ -1628,6 +1628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScreen: {fileID: 1507047581}
   secondsToAppear: 3
+  extraDelayBeforeMainMenu: 7
 --- !u!4 &264335032
 Transform:
   m_ObjectHideFlags: 0
@@ -11185,7 +11186,7 @@ MonoBehaviour:
   lives: 3
   maxLives: 3
   showNum: 0
-  showEndNum: 4
+  showEndNum: 1
   startingCharactersNum: 10
   charactersLeft: 0
   questionsAsked: 0
@@ -12897,6 +12898,9 @@ MonoBehaviour:
   audioSourceSFX: {fileID: 446845799}
   currentBgm: {fileID: 0}
   originalVolume: 0
+  winLoseMusic:
+  - {fileID: 8300000, guid: dd9876c90c60f644c86a2eca9ec7caa6, type: 3}
+  - {fileID: 8300000, guid: a1017dd6926d93746848aa687fd5de4a, type: 3}
   genreMusic:
   - {fileID: 0}
   - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
@@ -12910,7 +12914,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9abae07770c95b24da1a25894fe23df2, type: 2}
   - {fileID: 11400000, guid: 87dc56be8c1fe40428d8c91646950fc5, type: 2}
   - {fileID: 11400000, guid: 081d5d58b04ea954983e7b0f920b59c8, type: 2}
-  - {fileID: 11400000, guid: 47e41032b18fa9943960a1eae969b7c9, type: 2}
+  - {fileID: 11400000, guid: 2087f2910e81aff43b79c0c12d3bafac, type: 2}
   variousSfx:
   - {fileID: 8300000, guid: 5ac8c8ba66f500c449b8312e9a21eba1, type: 3}
   - {fileID: 8300000, guid: 49278cb92c442fa4db7a690539c7be23, type: 3}
